@@ -25,9 +25,11 @@
 
 <div class="grid md:grid-cols-2 gap-x-20 w-fit mx-auto text-xl my-5 md:my-10">
 	<li>Login with Google and magic link</li>
-	<li>Sveltekit and Svelte 5</li>
+	<li>Sveltekit</li>
+	<li>Svelte 5</li>
 	<li>Vercel for Hosting</li>
 	<li>Turso as the database</li>
+	<li>drizzle as ORM</li>
 	<li>Rewind for email</li>
 	<li>Lucia 3 for auth</li>
 	<li>Superforms 2</li>
