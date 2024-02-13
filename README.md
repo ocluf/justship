@@ -1,5 +1,6 @@
 # Just Ship - SvelteKit Auth Boilerplate 🚀
 
+
 ### Comes With 🌟
 
 - 🚪 **Login with Google** and **Magic Link with Email** (using Lucia)
@@ -10,6 +11,7 @@
 - 🛠️ **Drizzle** as ORM
 - ✍️ **Superforms 2**
 - ☁️ Hosted on **Vercel**
+
 
 ### Getting Started 🚀
 
@@ -29,5 +31,6 @@
 - 🎯 Point your main domain name to your project on Vercel
 - 🔐 create a `.env` at the root level and fill out the environment variables in `env.example`
 - ⚙️ Add those environment variables to your project in Vercel
+
 
 Feel free to contribute or suggest improvements! 🤝
