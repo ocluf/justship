@@ -1,34 +1,33 @@
-# Just Ship - sveltekit auth boilerplate
+# Just Ship - SvelteKit Auth Boilerplate 🚀
 
-### Comes with
+### Comes With 🌟
 
-- Login with Google and magic link with email (using Lucia)
-- Resend to send emails
-- Svelte 5
-- Tailwind css and shadcn-svelte for components (has build in dark mode)
-- Turso for the database
-- drizzle as orm
-- Superforms 2
-- Uses vercel for hosting
+- 🚪 **Login with Google** and **Magic Link with Email** (using Lucia)
+- 📧 **Resend** to send emails
+- 💻 **Svelte 5**
+- 🎨 **Tailwind CSS** and **shadcn-svelte** for components (with built-in dark mode)
+- 📦 **Turso** for the database
+- 🛠️ **Drizzle** as ORM
+- ✍️ **Superforms 2**
+- ☁️ Hosted on **Vercel**
 
+### Getting Started 🚀
 
-### getting started 
+#### Local Development
 
-local development
+- Run `npm install`
+- Run Mailpit for email testing: [Mailpit Instructions](https://github.com/axllent/mailpit)
+- Start the development server with `npm run dev`
 
-- run npm install
-- Run mailpit with instructions here [link to mailpit] 
-- run npm dev
+#### Production 🌐
 
-production
+- 🌍 Get a domain name
+- 📬 Create a **Resend** account and set up MX records as per [Resend Instructions](https://resend.com/domains)
+- 💾 Set up a database with **Turso**: [Turso Setup](https://turso.tech/))
+- 🔑 Create an OAuth credential in **Google Cloud**
+- 🏗️ Set up a project from this repo on **Vercel**: [link-to-vercel](https://vercel.com)
+- 🎯 Point your main domain name to your project on Vercel
+- 🔐 create a `.env` at the root level and fill out the environment variables in `env.example`
+- ⚙️ Add those environment variables to your project in Vercel
 
-- Get a domain name
-- Create a Resend account and setup mx records according to instructions there
-- Create an account on Turso and create a database
-- Create an Oauth credential in google cloud
-- Create an Project from this repo on vercel  
-- Point the main domain name to your project on vercel
-- fill out the environment variables in env.example in a new .env file
-- add those environment variables to your project in vercel
-
-
+Feel free to contribute or suggest improvements! 🤝
