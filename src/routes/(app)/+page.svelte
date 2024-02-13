@@ -3,6 +3,13 @@
 	import { Github, PiggyBank } from 'lucide-svelte';
 </script>
 
+<svelte:head>
+	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.52/build/spline-viewer.js">
+	</script>
+</svelte:head>
+
+<!-- Rest of your homepage content -->
+
 <div class="bg-white px-6 py-24 lg:px-8">
 	<div class="mx-auto max-w-2xl text-center">
 		<h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Just Ship</h2>
@@ -35,3 +42,6 @@
 	<li>Superforms 2</li>
 	<li>shadcn-svelte and tailwind</li>
 </div>
+
+<h2 class="text-center text-4xl font-bold mt-20 md:mt-32">Click on the laptop</h2>
+<spline-viewer url="https://prod.spline.design/YSTaVTAlOK8GCfs9/scene.splinecode"></spline-viewer>
