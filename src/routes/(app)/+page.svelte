@@ -8,7 +8,7 @@
 		<h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Just Ship</h2>
 		<p class="mt-6 text-lg leading-8 text-gray-600">
 			Skip the boring parts of making a web app. A completely <b>free</b> and <b>open source</b> sveltekit
-			starter kit.
+			starter template.
 		</p>
 		<div class="flex space-x-4 mt-6 w-fit mx-auto">
 			<a href="https://github.com/ocluf/justship">
@@ -21,15 +21,15 @@
 	</div>
 </div>
 
-<h2 class="text-center mt-10 text-4xl font-bold">Comes with</h2>
-<div>
-	<div class="w-fit mx-auto text-xl my-5">
-		<li>Login with Google and magic link</li>
-		<li>Sveltekit and Svelte 5</li>
-		<li>Vercel for Hosting</li>
-		<li>Turso as the database</li>
-		<li>Lucia 3 for auth</li>
-		<li>Superforms 2</li>
-		<li>shadcn-svelte and tailwind</li>
-	</div>
+<h2 class="text-center text-4xl font-bold">Comes with</h2>
+
+<div class="grid md:grid-cols-2 gap-x-20 w-fit mx-auto text-xl my-5 md:my-10">
+	<li>Login with Google and magic link</li>
+	<li>Sveltekit and Svelte 5</li>
+	<li>Vercel for Hosting</li>
+	<li>Turso as the database</li>
+	<li>Rewind for email</li>
+	<li>Lucia 3 for auth</li>
+	<li>Superforms 2</li>
+	<li>shadcn-svelte and tailwind</li>
 </div>

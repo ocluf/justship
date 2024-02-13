@@ -44,12 +44,9 @@
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
 		{:else}
-			<div class="ml-auto flex space-x-2">
-				<a href="/login" class="hidden md:block"
-					><Button class="text-md font-bold" variant="ghost">login</Button></a
-				>
-				<a href="/login"><Button class="font-bold text-md">get started now</Button></a>
-			</div>
+			<a class="ml-auto" href="/login"
+				><Button variant="outline" class="font-bold text-md">Sign in</Button></a
+			>
 		{/if}
 	</div>
 </header>
