@@ -3,7 +3,7 @@
 	import { Github, PiggyBank } from 'lucide-svelte';
 </script>
 
-<div class="bg-white px-6 py-24 sm:py-32 lg:px-8">
+<div class="bg-white px-6 py-24 lg:px-8">
 	<div class="mx-auto max-w-2xl text-center">
 		<h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Just Ship</h2>
 		<p class="mt-6 text-lg leading-8 text-gray-600">
@@ -25,8 +25,8 @@
 
 <div class="grid md:grid-cols-2 gap-x-20 w-fit mx-auto text-xl my-5 md:my-10">
 	<li>Login with Google and magic link</li>
-	<li>Sveltekit</li>
-	<li>Svelte 5</li>
+	<li>Sveltekit with svelte 5</li>
+	<li>Typescript</li>
 	<li>Vercel for Hosting</li>
 	<li>Turso as the database</li>
 	<li>drizzle as ORM</li>
