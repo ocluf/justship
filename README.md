@@ -17,7 +17,7 @@
 
 #### Local Development
 
-- Run `npm install`
+- Run `pnpm install`
 - Run Mailpit for email testing: [Mailpit Instructions](https://github.com/axllent/mailpit)
 - Start the development server with `npm run dev`
 
