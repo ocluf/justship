@@ -1,5 +1,7 @@
 # Just Ship - SvelteKit Auth Boilerplate 🚀
 
+**IMPORTANT: This template uses svelte 5 even though it is still in alpha. Svelte 5 is close to release but for now use at your own risk**
+
 
 ### Comes With 🌟
 
