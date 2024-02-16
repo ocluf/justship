@@ -48,6 +48,7 @@
 		})(document, window.posthog || []);
 		posthog.init('phc_KIdxWocwGarElqZABLSDNfLdtRvpV4xv4pszQbfAo3R', {
 			api_host: 'https://app.posthog.com'
+			autocapture: {url_allowlist: "https://justship.today"},
 		});
 	</script>
 	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.52/build/spline-viewer.js">
