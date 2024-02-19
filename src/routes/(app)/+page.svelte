@@ -84,7 +84,7 @@
 	<li>Vercel for Hosting</li>
 	<li>Turso as the database</li>
 	<li>drizzle as ORM</li>
-	<li>Rewind for email</li>
+	<li>Resend for email</li>
 	<li>Lucia 3 for auth</li>
 	<li>Superforms 2</li>
 	<li>shadcn-svelte and tailwind</li>
