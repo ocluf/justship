@@ -19,7 +19,7 @@
 
 #### Local Development
 
-- Run `pnpm install`
+- Run `pnpm install` or 'npm install --force-legacy-deps'
 - Run Mailpit for email testing: [Mailpit Instructions](https://github.com/axllent/mailpit)
 - add a .env file with a PUBLIC_PROJECT_NAME variable e.g `PUBLIC_PROJECT_NAME="Just Ship"`
 - run `npm run migrate` to initialise a local sqlite database
