@@ -2,7 +2,6 @@
 
 **IMPORTANT: This template uses svelte 5 even though it is still in alpha. Svelte 5 is close to release but for now use at your own risk**
 
-
 ### Comes With 🌟
 
 - 🚪 **Login with Google** and **Magic Link with Email** (using Lucia)
@@ -14,7 +13,6 @@
 - ✍️ **Superforms 2**
 - ☁️ Hosted on **Vercel**
 
-
 ### Getting Started 🚀
 
 #### Local Development
@@ -24,6 +22,7 @@
 - add a .env file with a PUBLIC_PROJECT_NAME variable e.g `PUBLIC_PROJECT_NAME="Just Ship"`
 - run `npm run migrate` to initialise a local sqlite database
 - Start the development server with `npm run dev`
+- remove everything at `src/routes/(app)/+page.svelte`
 
 #### Production 🌐
 
@@ -35,6 +34,5 @@
 - 🎯 Point your main domain name to your project on Vercel
 - 🔐 create a `.env` at the root level and fill out the environment variables in `env.example`
 - ⚙️ Add those environment variables to your project in Vercel
-
 
 Feel free to contribute or suggest improvements! 🤝
