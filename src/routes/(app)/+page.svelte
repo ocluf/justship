@@ -64,6 +64,9 @@
 			Skip the boring parts of making a web app. A completely <b>free</b> and <b>open source</b> sveltekit
 			starter template.
 		</p>
+		<p class="text-red-500">
+			Note: I turned of email login to use the free tier for another project
+		</p>
 		<div class="flex space-x-4 mt-6 w-fit mx-auto">
 			<a href="https://github.com/ocluf/justship">
 				<Button variant="outline"><Github class="mr-2" />Github</Button>
