@@ -1,5 +1,4 @@
 <script>
-	import { Button } from '$lib/components/ui/button';
 	import { Github, PiggyBank } from 'lucide-svelte';
 </script>
 
@@ -47,8 +46,11 @@
 				(e.__SV = 1));
 		})(document, window.posthog || []);
 		posthog.init('phc_KIdxWocwGarElqZABLSDNfLdtRvpV4xv4pszQbfAo3R', {
-			api_host: 'https://app.posthog.com'
-			autocapture: {url_allowlist: "https://justship.today,https://www.justship.today/, https://www.justship.today, https://justship.today/ "},
+			api_host: 'https://app.posthog.com',
+			autocapture: {
+				url_allowlist:
+					'https://justship.today,https://www.justship.today/, https://www.justship.today, https://justship.today/ '
+			}
 		});
 	</script>
 	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.52/build/spline-viewer.js">
@@ -68,11 +70,11 @@
 			Note: I turned of email login to use the free tier for another project
 		</p>
 		<div class="flex space-x-4 mt-6 w-fit mx-auto">
-			<a href="https://github.com/ocluf/justship">
-				<Button variant="outline"><Github class="mr-2" />Github</Button>
+			<a class="btn" href="https://github.com/ocluf/justship">
+				<Github class="mr-2" />Github
 			</a>
-			<a href="https://buy.stripe.com/eVa8yug4m2Z86nm9AB">
-				<Button><PiggyBank class="mr-2" />Buy me a coffee</Button>
+			<a class="btn btn-primary" href="https://buy.stripe.com/eVa8yug4m2Z86nm9AB">
+				<PiggyBank class="mr-2" />Buy me a coffee
 			</a>
 		</div>
 	</div>

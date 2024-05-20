@@ -1,12 +1,8 @@
 <script lang="ts">
 	import { env } from '$env/dynamic/public';
-	import Button from '$lib/components/ui/button/button.svelte';
 	import { CircleUserRound, LogOut, Ship } from 'lucide-svelte';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import DropdownMenuSeparator from '$lib/components/ui/dropdown-menu/dropdown-menu-separator.svelte';
 	import { enhance } from '$app/forms';
-
-	let { data } = $props();
+	let { data, children } = $props();
 </script>
 
 <header
@@ -19,7 +15,15 @@
 		</a>
 
 		{#if data.user}
-			<DropdownMenu.Root>
+			<form method="post" action="/login?/signout" use:enhance>
+				<button type="submit" class="w-full">
+					<div class="text-red-500">
+						<LogOut class="mr-2 h-4 w-4" />
+						<span>Log out</span>
+					</div>
+				</button>
+			</form>
+			<!-- <DropdownMenu.Root>
 				<DropdownMenu.Trigger asChild let:builder>
 					<Button builders={[builder]} class="ml-auto" variant="ghost">
 						<CircleUserRound />
@@ -42,12 +46,10 @@
 						</button>
 					</form>
 				</DropdownMenu.Content>
-			</DropdownMenu.Root>
+			</DropdownMenu.Root> -->
 		{:else}
-			<a class="ml-auto" href="/login"
-				><Button variant="outline" class="font-bold text-md">Sign in</Button></a
-			>
+			<a class="ml-auto btn btn-primary" href="/login">Sign in</a>
 		{/if}
 	</div>
 </header>
-<slot />
+{@render children()}
