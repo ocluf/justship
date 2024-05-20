@@ -49,10 +49,10 @@
 			api_host: 'https://app.posthog.com',
 			autocapture: {
 				url_allowlist: [
-					'https://justship.today/.*',
-					'https://www.justship.today/.*',
-					'https://www.justship.today',
-					'https://justship.today/'
+					'justship.today/.*',
+					'www.justship.today/.*',
+					'www.justship.today',
+					'justship.today/'
 				]
 			}
 		});
