@@ -1,17 +1,15 @@
-# Just Ship - SvelteKit Auth Boilerplate 🚀
-
-**IMPORTANT: This template uses svelte 5 even though it is still in alpha. Svelte 5 is close to release but for now use at your own risk**
+# Just Ship - as Svelte 5 SaaS Boilerplate 🚀
 
 ### Comes With 🌟
 
 - 🚪 **Login with Google** and **Magic Link with Email** (using Lucia)
 - 📧 **Resend** to send emails
 - 💻 **Svelte 5**
-- 🎨 **Tailwind CSS** and **shadcn-svelte** for components (with built-in dark mode)
+- 🎨 **Tailwind CSS** and **daisy-ui** for components (with built-in dark mode)
 - 📦 **Turso** for the database
 - 🛠️ **Drizzle** as ORM
 - ✍️ **Superforms 2**
-- ☁️ Hosted on **Vercel**
+- ☁️ Easily hosted on **Vercel**
 
 ### Getting Started 🚀
 
