@@ -70,7 +70,6 @@
 					</button>
 				</form>
 			{:else}
-				<!-- Classes are the same as the normal Input component except for py. But needed a normal input element to call .focus() in handleEmail-->
 				<form method="post" action="/login?/login_with_email" use:enhance>
 					<input
 						bind:this={email_input}
