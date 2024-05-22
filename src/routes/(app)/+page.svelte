@@ -1,6 +1,6 @@
 <script>
 	import CopyText from '$lib/components/CopyText.svelte';
-	import { Link, Palette, PiggyBank, SquarePlus, Star } from 'lucide-svelte';
+	import { Link, Palette, PiggyBank, SquarePlus } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -57,8 +57,6 @@
 				]
 			}
 		});
-	</script>
-	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.52/build/spline-viewer.js">
 	</script>
 </svelte:head>
 
@@ -209,5 +207,3 @@
 		</div>
 	</div>
 </div>
-
-<spline-viewer url="https://prod.spline.design/YSTaVTAlOK8GCfs9/scene.splinecode"></spline-viewer>
