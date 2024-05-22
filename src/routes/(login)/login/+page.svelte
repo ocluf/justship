@@ -3,7 +3,7 @@
 	import { tick } from 'svelte';
 	import Google from '$lib/components/icons/Google.svelte';
 	import { superForm } from 'sveltekit-superforms';
-	import { Mail, Ship } from 'lucide-svelte';
+	import { Mail, Laugh } from 'lucide-svelte';
 
 	const { data } = $props();
 
@@ -32,6 +32,14 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Svelte Saas Boilerplate</title>
+	<meta
+		name="description"
+		content="The free and open-source Svelte 5 and SvelteKit SaaS boilerplate that gets you shipping fast. Includes authentication with magic link and Google, email, styling with Tailwind CSS and DaisyUI, and Turso for the database."
+	/>
+</svelte:head>
+
 <div class="flex p-5 items-center justify-center h-screen">
 	<div class="card p-5 flex flex-col w-full max-w-[470px]">
 		{#if email_sent}
@@ -45,7 +53,7 @@
 		{:else}
 			<div class="my-4 flex flex-col space-y-1.5 text-center w-full">
 				<div class="mx-auto w-fit">
-					<Ship class="h-12 w-12 my-4" />
+					<Laugh class="h-12 w-12 my-4" />
 				</div>
 				<div class="mx-auto text-3xl font-semibold leading-none tracking-tight">
 					Welcome to {PUBLIC_PROJECT_NAME}
