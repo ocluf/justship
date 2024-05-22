@@ -49,12 +49,7 @@
 		posthog.init('phc_KIdxWocwGarElqZABLSDNfLdtRvpV4xv4pszQbfAo3R', {
 			api_host: 'https://app.posthog.com',
 			autocapture: {
-				url_allowlist: [
-					'justship.today/.*',
-					'www.justship.today/.*',
-					'www.justship.today',
-					'justship.today/'
-				]
+				url_allowlist: ['justship.today/.*', 'svelteboilerplate.com/.*']
 			}
 		});
 	</script>
@@ -107,12 +102,6 @@
 		></div>
 	</div>
 </div>
-
-<!-- <div class="mx-auto max-w-7xl px-6 lg:px-8">
-	<div class="mx-auto max-w-2xl md:text-center">
-		<p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-12">Build With</p>
-	</div>
-</div> -->
 <div class="px-5 lg:px-10 pb-32 lg:pb-48 flex flex-wrap gap-10 lg:gap-14 justify-center">
 	<div>
 		<img class="h-16 lg:h-20 rounded-xl" src="/svelte.svg" alt="svelte" />
