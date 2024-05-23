@@ -1,4 +1,4 @@
-# Just Ship - as Svelte 5 SaaS Boilerplate 🚀
+# Just Ship - A Svelte 5 SaaS Boilerplate 🚀
 
 ### Comes With 🌟
 
@@ -28,7 +28,7 @@
 - 📬 Create a **Resend** account and set up MX records as per [Resend Instructions](https://resend.com/domains)
 - 💾 Set up a database with **Turso**: [Turso Setup](https://turso.tech/)
 - 🔑 Create an OAuth credential in **Google Cloud**
-- 🏗️ Set up a project from this repo on **Vercel**: [link-to-vercel](https://vercel.com)
+- 🏗️ Set up a project from this repo on **Vercel**: [vercel](https://vercel.com)
 - 🎯 Point your main domain name to your project on Vercel
 - 🔐 create a `.env` at the root level and fill out the environment variables in `env.example`
 - ⚙️ Add those environment variables to your project in Vercel
