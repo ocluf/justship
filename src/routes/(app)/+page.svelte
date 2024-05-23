@@ -233,6 +233,148 @@
 		</div>
 	</div>
 </div>
+<div class="py-24 sm:py-32" data-theme="dark">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div
+			class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+		>
+			<div>
+				<h2 class="text-base font-semibold leading-7 text-accent">The roadmap</h2>
+				<p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">What is coming</p>
+				<p class="mt-6 text-base leading-7 text-base-content text-opacity-75">
+					What else is coming to the boilerplate? Here are some of the features that I would like to
+					add. I'll add checkmarks as I complete them.
+				</p>
+			</div>
+			<dl
+				class="col-span-2 grid grid-cols-1 gap-x-8 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:gap-y-16"
+			>
+				<div class="relative pl-9">
+					<dt class="font-semibold text-base-content">
+						<!-- <svg
+							class="absolute left-0 top-1 h-5 w-5 text-accent"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+								clip-rule="evenodd"
+							/>
+						</svg> -->
+						Posthog Analytics
+					</dt>
+					<dd class="mt-2 text-base-content text-opacity-75">
+						Add posthog analytics in a way that events aren't blocked by adblockers.
+					</dd>
+				</div>
+				<div class="relative pl-9">
+					<dt class="font-semibold text-base-content">
+						<!-- <svg
+							class="absolute left-0 top-1 h-5 w-5 text-accent"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+								clip-rule="evenodd"
+							/>
+						</svg> -->
+						Payments with Stripe
+					</dt>
+					<dd class="mt-2 text-base-content text-opacity-75">
+						Setup the webhooks to listen for succesful payments from stripe.
+					</dd>
+				</div>
+				<div class="relative pl-9">
+					<dt class="font-semibold text-base-content">
+						<!-- <svg
+							class="absolute left-0 top-1 h-5 w-5 text-accent"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+								clip-rule="evenodd"
+							/>
+						</svg> -->
+						Documentation
+					</dt>
+					<dd class="mt-2 text-base-content text-opacity-75">
+						Documentation on how to setup various features and get how to get API keys.
+					</dd>
+				</div>
+				<div class="relative pl-9">
+					<dt class="font-semibold text-base-content">
+						<!-- <svg
+							class="absolute left-0 top-1 h-5 w-5 text-accent"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+								clip-rule="evenodd"
+							/>
+						</svg> -->
+						A setup CLI
+					</dt>
+					<dd class="mt-2 text-base-content text-opacity-75">
+						A Command Line Interface similar to npm create svelte where you get some tech choices
+						like e.g. the database.
+					</dd>
+				</div>
+				<div class="relative pl-9">
+					<dt class="font-semibold text-base-content">
+						<!-- <svg
+							class="absolute left-0 top-1 h-5 w-5 text-accent"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+								clip-rule="evenodd"
+							/>
+						</svg> -->
+						Blog components
+					</dt>
+					<dd class="mt-2 text-base-content text-opacity-75">
+						A way to easily deploy blogs that have all the things neccesary for SEO.
+					</dd>
+				</div>
+				<div class="relative pl-9">
+					<dt class="font-semibold text-base-content">
+						<!-- <svg
+							class="absolute left-0 top-1 h-5 w-5 text-accent"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+								clip-rule="evenodd"
+							/>
+						</svg> -->
+						Admin dashboard
+					</dt>
+					<dd class="mt-2 text-base-content text-opacity-75">
+						A dashboard where you can update/delete/edit users.
+					</dd>
+				</div>
+			</dl>
+		</div>
+	</div>
+</div>
+
 <div class="relative isolate pb-32 pt-24 sm:pt-32">
 	<div
 		class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-10 blur-3xl"
