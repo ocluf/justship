@@ -192,7 +192,7 @@
 					</dt>
 					<dd class="mt-2 text-base leading-7 text-base-content text-opacity-85">
 						Transactional emails with resend, easy database migrations and deployments with drizzle
-						and turso.
+						and turso. Super easy local dev experience.
 					</dd>
 				</div>
 			</dl>
