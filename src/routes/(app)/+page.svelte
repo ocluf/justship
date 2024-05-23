@@ -87,7 +87,7 @@
 						<img src="/github.svg" alt="github" class="w-6" />
 						<div class="font-bold text-lg">225</div>
 					</a>
-					<a class="btn btn-accent" href="https://buy.stripe.com/eVa8yug4m2Z86nm9AB">
+					<a class="btn btn-accent" href="https://buy.stripe.com/fZeg0WcSa43cfXW8wy">
 						<PiggyBank class="mr-2" />support this project
 					</a>
 				</div>
