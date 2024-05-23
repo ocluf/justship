@@ -214,12 +214,16 @@
 				getting until you've purchased them!
 			</p>
 			<p class="mb-5 text-lg">
-				That’s why I created this <b>completely free SaaS boilerplate</b>. Simply clone the
-				repository to see if it meets your requirements.
+				On the other hand there are open source boilerplates. But often these aren't maintained or
+				updated as much post launch.
 			</p>
 			<p class="mb-5 text-lg">
-				If you find it useful, I’d greatly appreciate your support by sponsoring the development of
-				new features. However, if you can’t afford it or don’t wish to contribute, that’s fine too!
+				That is why I wan't to propose a <b>gentleman's agreement</b>. This boilerplate will stay
+				free and opensource.
+			</p>
+			<p class="mb-5 text-lg">
+				<b>But</b>, if it does provide value to you and saves you hours of work. You support svelte
+				boilerplate by making a donation.
 			</p>
 		</div>
 		<div class="ml-auto flex gap-5 w-fit mt-16">
