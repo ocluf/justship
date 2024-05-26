@@ -16,8 +16,8 @@ export async function create(cwd, options) {
  * @param {string} cwd
  */
 function writeTemplateFiles(cwd) {
-  const templateDir = dist("template");
-  const targetDir = dist(cwd);
+  const templateDir = path.resolve(dist("template"));
+  const targetDir = path.resolve(cwd);
   const ig = loadIgnoreConfig(templateDir);
 
   copyTemplate(templateDir, targetDir, ig, cwd);
@@ -51,6 +51,9 @@ function copyTemplate(srcDir, destDir, ig, projectName) {
   ensureDirectoryExists(destDir);
 
   const items = fs.readdirSync(srcDir);
+
+  //   console.log(srcDir);
+  //   console.log(destDir);
 
   items.forEach((item) => {
     const srcPath = path.join(srcDir, item);

@@ -1,8 +1,12 @@
 {
   "name": "create-justship",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "\"A CLI for creating justship boilerplates\" ",
   "main": "index.js",
+  "bin": {
+    "justship": "./bin.js"
+  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/ocluf/justship.git"
   },
-  "author": "Fulco",
+  "author": "Fulco Taen",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ocluf/justship/issues"
@@ -21,7 +25,6 @@
     "ignore": "^5.3.1",
     "kleur": "^4.1.5"
   },
-  "type": "module",
   "devDependencies": {
     "@types/node": "^20.12.12"
   }
