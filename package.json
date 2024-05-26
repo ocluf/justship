@@ -1,60 +1,28 @@
 {
-	"name": "justship",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"generate": "drizzle-kit generate:sqlite",
-		"migrate": "tsx ./migrate.ts"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.2.0",
-		"@sveltejs/kit": "^2.5.9",
-		"@sveltejs/vite-plugin-svelte": "^3.1.0",
-		"@types/better-sqlite3": "^7.6.10",
-		"@types/eslint": "8.56.10",
-		"@typescript-eslint/eslint-plugin": "^7.10.0",
-		"@typescript-eslint/parser": "^7.10.0",
-		"autoprefixer": "^10.4.19",
-		"cross-env": "^7.0.3",
-		"daisyui": "^4.11.1",
-		"drizzle-kit": "^0.21.2",
-		"eslint": "^9.3.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.39.0",
-		"postcss": "^8.4.38",
-		"prettier": "^3.2.5",
-		"prettier-plugin-svelte": "^3.2.3",
-		"svelte": "5.0.0-next.136",
-		"svelte-check": "^3.7.1",
-		"sveltekit-superforms": "2.13.1",
-		"tailwindcss": "^3.4.3",
-		"tslib": "^2.6.2",
-		"tsx": "^4.10.5",
-		"typescript": "^5.4.5",
-		"vite": "^5.2.11",
-		"zod": "^3.23.8"
-	},
-	"type": "module",
-	"dependencies": {
-		"@internationalized/date": "^3.5.3",
-		"@libsql/client": "^0.6.0",
-		"@lucia-auth/adapter-drizzle": "^1.0.7",
-		"@tailwindcss/typography": "^0.5.13",
-		"arctic": "^1.8.1",
-		"dotenv": "^16.4.5",
-		"drizzle-orm": "^0.30.10",
-		"emailjs": "^4.0.3",
-		"formsnap": "^1.0.0",
-		"lucia": "^3.2.0",
-		"lucide-svelte": "^0.378.0",
-		"oslo": "^1.2.0",
-		"resend": "^3.2.0"
-	}
+  "name": "create-justship",
+  "version": "0.0.1",
+  "description": "\"A CLI for creating justship boilerplates\" ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocluf/justship.git"
+  },
+  "author": "Fulco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ocluf/justship/issues"
+  },
+  "homepage": "https://github.com/ocluf/justship#readme",
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "ignore": "^5.3.1",
+    "kleur": "^4.1.5"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.12.12"
+  }
 }
