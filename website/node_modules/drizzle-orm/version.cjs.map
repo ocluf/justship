@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/version.ts"],"sourcesContent":["// @ts-ignore - imported using Rollup json plugin\nexport { version as npmVersion } from '../package.json';\nexport const compatibilityVersion = 6;\n"],"mappings":";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AACA,qBAAsC;AAC/B,MAAM,uBAAuB;","names":[]}
