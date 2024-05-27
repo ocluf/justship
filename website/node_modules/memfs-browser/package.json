@@ -1,0 +1,56 @@
+{
+  "name": "memfs-browser",
+  "version": "3.5.10302",
+  "description": "In-memory file-system with Node's fs API.",
+  "main": "./dist/memfs.js",
+  "module": "./dist/memfs.esm.js",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "webpack": "webpack",
+    "rollup": "rollup --bundleConfigAsCjs -c rollup.config.js",
+    "prepare": "npm run webpack && npm run rollup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toyobayashi/memfs-browser.git"
+  },
+  "license": "Unlicense",
+  "keywords": [
+    "fs",
+    "filesystem",
+    "fs.js",
+    "memory-fs",
+    "memfs",
+    "file",
+    "file system",
+    "mount",
+    "memory",
+    "in-memory",
+    "virtual",
+    "test",
+    "testing",
+    "mock"
+  ],
+  "dependencies": {
+    "memfs": "3.5.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-inject": "^5.0.5",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-terser": "^0.4.4",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "rollup": "^4.9.4",
+    "readable-stream": "^4.5.2",
+    "util": "^0.12.5",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

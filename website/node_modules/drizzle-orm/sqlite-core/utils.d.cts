@@ -1,0 +1,31 @@
+import { Table } from "../table.cjs";
+import type { Check } from "./checks.cjs";
+import type { ForeignKey } from "./foreign-keys.cjs";
+import type { Index } from "./indexes.cjs";
+import type { PrimaryKey } from "./primary-keys.cjs";
+import { SQLiteTable } from "./table.cjs";
+import { type UniqueConstraint } from "./unique-constraint.cjs";
+import type { SQLiteView } from "./view.cjs";
+export declare function getTableConfig<TTable extends SQLiteTable>(table: TTable): {
+    columns: import("./index.ts").SQLiteColumn<any, object>[];
+    indexes: Index[];
+    foreignKeys: ForeignKey[];
+    checks: Check[];
+    primaryKeys: PrimaryKey[];
+    uniqueConstraints: UniqueConstraint[];
+    name: string;
+};
+export type OnConflict = 'rollback' | 'abort' | 'fail' | 'ignore' | 'replace';
+export declare function getViewConfig<TName extends string = string, TExisting extends boolean = boolean>(view: SQLiteView<TName, TExisting>): {
+    algorithm?: "undefined" | "merge" | "temptable" | undefined;
+    definer?: string | undefined;
+    sqlSecurity?: "definer" | "invoker" | undefined;
+    withCheckOption?: "cascaded" | "local" | undefined;
+    name: TName;
+    originalName: TName;
+    schema: string | undefined;
+    selectedFields: import("../operations.ts").SelectedFields<import("../column.ts").AnyColumn, Table<import("../table.ts").TableConfig<import("../column.ts").Column<any, object, object>>>>;
+    isExisting: TExisting;
+    query: TExisting extends true ? undefined : import("../index.ts").SQL<unknown>;
+    isAlias: boolean;
+};

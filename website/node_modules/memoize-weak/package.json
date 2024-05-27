@@ -1,0 +1,42 @@
+{
+  "name": "memoize-weak",
+  "version": "1.0.2",
+  "description": "Garbage-collected memoizer for variadic functions",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "scripts": {
+    "test": "eslint index.js test lib && mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timkendrick/memoize-weak.git"
+  },
+  "keywords": [
+    "memoize",
+    "weak",
+    "weakmap",
+    "garbage"
+  ],
+  "author": "Tim Kendrick <timkendrick@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timkendrick/memoize-weak/issues"
+  },
+  "homepage": "https://github.com/timkendrick/memoize-weak#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.10.0",
+    "eslint-config-airbnb-base": "^10.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.0.0",
+    "sinon": "^1.0.0"
+  }
+}

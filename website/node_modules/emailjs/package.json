@@ -1,0 +1,68 @@
+{
+	"name": "emailjs",
+	"description": "send text/html emails and attachments (files, streams and strings) from node.js to any smtp server",
+	"version": "4.0.3",
+	"author": "eleith",
+	"contributors": [
+		"izuzak",
+		"Hiverness",
+		"mscdex",
+		"jimmybergman",
+		"zackschuster"
+	],
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/eleith/emailjs.git"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@ledge/configs": "23.3.23322",
+		"@rollup/plugin-typescript": "8.3.2",
+		"@types/mailparser": "3.4.0",
+		"@types/node": "12.12.6",
+		"@types/smtp-server": "3.5.7",
+		"@typescript-eslint/eslint-plugin": "5.21.0",
+		"@typescript-eslint/parser": "5.21.0",
+		"ava": "4.2.0",
+		"eslint": "8.14.0",
+		"eslint-config-prettier": "8.5.0",
+		"eslint-plugin-prettier": "4.0.0",
+		"mailparser": "3.5.0",
+		"prettier": "2.6.2",
+		"rollup": "2.70.2",
+		"smtp-server": "3.11.0",
+		"ts-node": "10.9.1",
+		"tslib": "2.4.0",
+		"typescript": "4.3.5"
+	},
+	"peerDependencies": {
+		"typescript": ">=4.3.5"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
+	},
+	"resolutions": {
+		"nodemailer": "6.7.4"
+	},
+	"engines": {
+		"node": ">=12"
+	},
+	"files": [
+		"email.js",
+		"email.ts",
+		"smtp"
+	],
+	"types": "./email.ts",
+	"exports": {
+		"default": "./email.js"
+	},
+	"scripts": {
+		"build": "rollup -c rollup.config.ts",
+		"lint": "eslint *.ts \"+(smtp|test)/*.ts\"",
+		"pretest": "yarn build",
+		"test": "ava"
+	},
+	"license": "MIT"
+}

@@ -1,0 +1,34 @@
+{
+	"name": "zimmerframe",
+	"description": "A tool for walking ASTs",
+	"version": "1.1.2",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Rich-Harris/zimmerframe"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./types/index.d.ts",
+			"import": "./src/walk.js"
+		}
+	},
+	"types": "./types/index.d.ts",
+	"files": [
+		"src",
+		"types"
+	],
+	"devDependencies": {
+		"dts-buddy": "^0.1.13",
+		"typescript": "^5.1.6",
+		"vitest": "^0.34.2"
+	},
+	"scripts": {
+		"prepublishOnly": "dts-buddy -m zimmerframe:src/index.d.ts",
+		"check": "tsc",
+		"test": "vitest --run",
+		"test:watch": "vitest"
+	},
+	"license": "MIT",
+	"packageManager": "pnpm@8.6.12"
+}

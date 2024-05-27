@@ -1,0 +1,98 @@
+{
+  "name": "@node-rs/bcrypt",
+  "version": "1.9.0",
+  "description": "Rust bcrypt binding",
+  "keywords": [
+    "bcrypt",
+    "auth",
+    "password",
+    "authentication",
+    "encryption",
+    "crypto",
+    "N-API",
+    "napi-rs",
+    "node-rs"
+  ],
+  "author": "LongYinan <lynweklm@gmail.com>",
+  "homepage": "https://github.com/napi-rs/node-rs",
+  "license": "MIT",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "binding.js",
+    "binding.d.ts",
+    "LICENSE",
+    "LICENSE.rust-bcrypt"
+  ],
+  "napi": {
+    "binaryName": "bcrypt",
+    "targets": [
+      "x86_64-apple-darwin",
+      "aarch64-apple-darwin",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "aarch64-linux-android",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "aarch64-pc-windows-msvc",
+      "armv7-unknown-linux-gnueabihf",
+      "x86_64-unknown-linux-musl",
+      "x86_64-unknown-freebsd",
+      "i686-pc-windows-msvc",
+      "armv7-linux-androideabi",
+      "wasm32-wasi-preview1-threads"
+    ]
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/napi-rs/node-rs.git"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts -d ../../artifacts",
+    "bench": "cross-env NODE_ENV=production node benchmark/bcrypt.js",
+    "build": "napi build --platform --release --js binding.js --dts binding.d.ts",
+    "build:debug": "napi build --platform",
+    "prepublishOnly": "napi prepublish",
+    "version": "napi version"
+  },
+  "bugs": {
+    "url": "https://github.com/napi-rs/node-rs/issues"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^3.0.0-alpha.33",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.3"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Brooooooklyn"
+  },
+  "gitHead": "1f5f00de85b46fd32f5af7a072df04eb3e3c9306",
+  "optionalDependencies": {
+    "@node-rs/bcrypt-darwin-x64": "1.9.0",
+    "@node-rs/bcrypt-darwin-arm64": "1.9.0",
+    "@node-rs/bcrypt-win32-x64-msvc": "1.9.0",
+    "@node-rs/bcrypt-linux-x64-gnu": "1.9.0",
+    "@node-rs/bcrypt-android-arm64": "1.9.0",
+    "@node-rs/bcrypt-linux-arm64-gnu": "1.9.0",
+    "@node-rs/bcrypt-linux-arm64-musl": "1.9.0",
+    "@node-rs/bcrypt-win32-arm64-msvc": "1.9.0",
+    "@node-rs/bcrypt-linux-arm-gnueabihf": "1.9.0",
+    "@node-rs/bcrypt-linux-x64-musl": "1.9.0",
+    "@node-rs/bcrypt-freebsd-x64": "1.9.0",
+    "@node-rs/bcrypt-win32-ia32-msvc": "1.9.0",
+    "@node-rs/bcrypt-android-arm-eabi": "1.9.0",
+    "@node-rs/bcrypt-wasm32-wasi": "1.9.0"
+  }
+}

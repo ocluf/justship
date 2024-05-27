@@ -1,0 +1,39 @@
+{
+  "name": "esrap",
+  "version": "1.2.2",
+  "description": "Parse in reverse",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rich-Harris/esrap"
+  },
+  "type": "module",
+  "files": [
+    "src",
+    "types"
+  ],
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "types": "./types/index.d.ts",
+  "devDependencies": {
+    "acorn": "^8.10.0",
+    "bun-types": "^1.0.9",
+    "dts-buddy": "^0.2.4",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "zimmerframe": "^1.0.0"
+  },
+  "scripts": {
+    "check": "tsc",
+    "prepublishOnly": "bun test && dts-buddy",
+    "sandbox": "bun run test/sandbox/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@jridgewell/sourcemap-codec": "^1.4.15",
+    "@types/estree": "^1.0.1"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "name": "@node-rs/argon2",
+  "version": "1.7.0",
+  "description": "RustCrypto: Argon2 binding for Node.js",
+  "homepage": "https://github.com/napi-rs/node-rs",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "argon2",
+    "argon2-password",
+    "crypto",
+    "password",
+    "encryption",
+    "hashing",
+    "hash",
+    "secure",
+    "verify"
+  ],
+  "napi": {
+    "binaryName": "argon2",
+    "targets": [
+      "x86_64-apple-darwin",
+      "aarch64-apple-darwin",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "aarch64-linux-android",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "aarch64-pc-windows-msvc",
+      "armv7-unknown-linux-gnueabihf",
+      "x86_64-unknown-linux-musl",
+      "x86_64-unknown-freebsd",
+      "i686-pc-windows-msvc",
+      "armv7-linux-androideabi",
+      "wasm32-wasi-preview1-threads"
+    ]
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/napi-rs/node-rs.git"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts -d ../../artifacts",
+    "bench": "cross-env NODE_ENV=production node benchmark/argon2.js",
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "prepublishOnly": "napi prepublish",
+    "version": "napi version"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^3.0.0-alpha.33",
+    "argon2": "^0.31.2",
+    "cross-env": "^7.0.3"
+  },
+  "gitHead": "1f5f00de85b46fd32f5af7a072df04eb3e3c9306",
+  "optionalDependencies": {
+    "@node-rs/argon2-darwin-x64": "1.7.0",
+    "@node-rs/argon2-darwin-arm64": "1.7.0",
+    "@node-rs/argon2-win32-x64-msvc": "1.7.0",
+    "@node-rs/argon2-linux-x64-gnu": "1.7.0",
+    "@node-rs/argon2-android-arm64": "1.7.0",
+    "@node-rs/argon2-linux-arm64-gnu": "1.7.0",
+    "@node-rs/argon2-linux-arm64-musl": "1.7.0",
+    "@node-rs/argon2-win32-arm64-msvc": "1.7.0",
+    "@node-rs/argon2-linux-arm-gnueabihf": "1.7.0",
+    "@node-rs/argon2-linux-x64-musl": "1.7.0",
+    "@node-rs/argon2-freebsd-x64": "1.7.0",
+    "@node-rs/argon2-win32-ia32-msvc": "1.7.0",
+    "@node-rs/argon2-android-arm-eabi": "1.7.0",
+    "@node-rs/argon2-wasm32-wasi": "1.7.0"
+  }
+}

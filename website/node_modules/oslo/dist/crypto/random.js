@@ -1,0 +1,60 @@
+import { bytesToInteger } from "../bytes.js";
+export function random() {
+    const buffer = new ArrayBuffer(8);
+    const bytes = crypto.getRandomValues(new Uint8Array(buffer));
+    // sets the exponent value (11 bits) to 01111111111 (1023)
+    // since the bias is 1023 (2 * (11 - 1) - 1), 1023 - 1023 = 0
+    // 2^0 * (1 + [52 bit number between 0-1]) = number between 1-2
+    bytes[0] = 63;
+    bytes[1] = bytes[1] | 240;
+    return new DataView(buffer).getFloat64(0) - 1;
+}
+export function generateRandomInteger(max) {
+    if (max < 0 || !Number.isInteger(max)) {
+        throw new Error("Argument 'max' must be an integer greater than or equal to 0");
+    }
+    const bitLength = (max - 1).toString(2).length;
+    const shift = bitLength % 8;
+    const bytes = new Uint8Array(Math.ceil(bitLength / 8));
+    crypto.getRandomValues(bytes);
+    // This zeroes bits that can be ignored to increase the chance `result` < `max`.
+    // For example, if `max` can be represented with 10 bits, the leading 6 bits of the random 16 bits (2 bytes) can be ignored.
+    if (shift !== 0) {
+        bytes[0] &= (1 << shift) - 1;
+    }
+    let result = bytesToInteger(bytes);
+    while (result >= max) {
+        crypto.getRandomValues(bytes);
+        if (shift !== 0) {
+            bytes[0] &= (1 << shift) - 1;
+        }
+        result = bytesToInteger(bytes);
+    }
+    return result;
+}
+export function generateRandomString(length, alphabet) {
+    let result = "";
+    for (let i = 0; i < length; i++) {
+        result += alphabet[generateRandomInteger(alphabet.length)];
+    }
+    return result;
+}
+export function alphabet(...patterns) {
+    const patternSet = new Set(patterns);
+    let result = "";
+    for (const pattern of patternSet) {
+        if (pattern === "a-z") {
+            result += "abcdefghijklmnopqrstuvwxyz";
+        }
+        else if (pattern === "A-Z") {
+            result += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+        else if (pattern === "0-9") {
+            result += "0123456789";
+        }
+        else {
+            result += pattern;
+        }
+    }
+    return result;
+}
