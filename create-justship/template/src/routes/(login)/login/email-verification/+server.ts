@@ -12,21 +12,19 @@ export async function GET({ request }): Promise<Response> {
 	}
 
 	const email_token = await getEmailToken(verificationToken);
-	console.log('Email Token:', email_token);
+
 	if (email_token) {
 		deleteEmailToken(verificationToken);
-		console.log('Deleted email token:', verificationToken);
 	}
 
 	if (!email_token || !isWithinExpirationDate(email_token.expires_at)) {
-		console.log('Invalid or expired email token');
+		console.error('Invalid or expired email token');
 		return new Response('error', { status: 400 });
 	}
 
 	const user = await getUserById(email_token.user_id);
-	console.log('User:', user);
 	if (!user || user.email !== email_token.email) {
-		console.log('Invalid user or email mismatch');
+		console.error('Invalid user or email mismatch', user, email_token);
 		return new Response(null, {
 			status: 400
 		});

@@ -1,26 +1,20 @@
-# Just Ship - A Svelte 5 SaaS Boilerplate 🚀
+# Just Ship - An easy to setup Svelte 5 SaaS Boilerplate
 
-### Comes With 🌟
+### Comes With
 
-- 🚪 **Login with Google** and **Magic Link with Email** (using Lucia)
+- 🚪 **Login with Google** and **Magic Link** (using Lucia)
 - 📧 **Resend** to send emails
 - 💻 **Svelte 5**
-- 🎨 **Tailwind CSS** and **daisy-ui** for components (with built-in dark mode)
-- 📦 **Turso** for the database
+- 🎨 **Tailwind CSS** and **daisy-ui** for styling
+- 📦 **Turso** for the database and super easy local development
 - 🛠️ **Drizzle** as ORM
-- ✍️ **Superforms 2**
-- ☁️ Easily hosted on **Vercel**
+- ☁️ Easily hosted with free tier on **Vercel**
 
 ### Getting Started 🚀
 
 #### Local Development
 
-- Run `pnpm install` or 'npm install --force-legacy-deps'
-- Run Mailpit for email testing: [Mailpit Instructions](https://github.com/axllent/mailpit)
-- add a .env file with a PUBLIC_PROJECT_NAME variable e.g `PUBLIC_PROJECT_NAME="Just Ship"`
-- run `npm run migrate` to initialise a local sqlite database
-- Start the development server with `npm run dev`
-- remove everything at `src/routes/(app)/+page.svelte`
+- Simply run `npm create justship@latest`
 
 #### Production 🌐
 
@@ -30,7 +24,7 @@
 - 🔑 Create an OAuth credential in **Google Cloud**
 - 🏗️ Set up a project from this repo on **Vercel**: [vercel](https://vercel.com)
 - 🎯 Point your main domain name to your project on Vercel
-- 🔐 create a `.env` at the root level and fill out the environment variables in `env.example`
+- 🔐 fill out the environment variables in `.env`
 - ⚙️ Add those environment variables to your project in Vercel
 
 Feel free to contribute or suggest improvements! 🤝
