@@ -336,7 +336,7 @@
 				free and opensource.
 			</p>
 			<p class="mb-5 text-lg">
-				<b>But</b>, if it does save you hours of work and you can afford it. You support svelte
+				<b>But</b>, if it does save you hours of work <b>and</b> you can afford it. You support svelte
 				boilerplate by making a donation.
 			</p>
 		</div>
