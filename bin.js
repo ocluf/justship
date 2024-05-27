@@ -3,8 +3,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import * as p from "@clack/prompts";
-import { grey } from "kleur/colors";
+import { bold, cyan, grey } from "kleur/colors";
 import { create } from "./index.js";
+import { package_manager } from "./utils.js";
 
 const { version } = JSON.parse(
   fs.readFileSync(new URL("package.json", import.meta.url), "utf-8")
@@ -44,3 +45,20 @@ if (fs.existsSync(cwd)) {
 await create(cwd, {
   name: path.basename(path.resolve(cwd)),
 });
+
+console.log("\nNext steps:");
+let i = 1;
+
+const relative = path.relative(process.cwd(), cwd);
+if (relative !== "") {
+  console.log(`  ${i++}: ${bold(cyan(`cd ${relative}`))}`);
+}
+
+console.log(`  ${i++}: ${bold(cyan(`${package_manager} install`))}`);
+// prettier-ignore
+console.log(`  ${i++}: ${bold(cyan(`${package_manager} run generate && ${package_manager} run migrate`))}`);
+// prettier-ignore
+console.log(`  ${i++}: ${bold(cyan('install and run mailpit https://mailpit.axllent.org/docs/install/'))}`);
+console.log(`  ${i++}: ${bold(cyan(`${package_manager} run dev -- --open`))}`);
+
+console.log(`\nTo close the dev server, hit ${bold(cyan("Ctrl-C"))}`);

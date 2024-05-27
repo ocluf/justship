@@ -52,9 +52,6 @@ function copyTemplate(srcDir, destDir, ig, projectName) {
 
   const items = fs.readdirSync(srcDir);
 
-  //   console.log(srcDir);
-  //   console.log(destDir);
-
   items.forEach((item) => {
     const srcPath = path.join(srcDir, item);
     let destPath = path.join(destDir, item);
