@@ -7,7 +7,7 @@ if [ -n "$(git status --porcelain)" ]; then
 fi
 
 # Get the list of ignored files that are currently tracked by git
-ignored_files=$(git ls-files -i --exclude-per-directory=.gitignore)
+ignored_files=$(git ls-files -i -c --exclude-per-directory=.gitignore)
 
 if [ -z "$ignored_files" ]; then
   echo "No tracked files match the patterns in .gitignore."
