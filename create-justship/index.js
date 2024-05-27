@@ -57,6 +57,13 @@ function copyTemplate(srcDir, destDir, ig, projectName) {
     let destPath = path.join(destDir, item);
     const relativePath = path.relative(destPath, srcPath);
 
+    // Special handling for .gitignore to ensure it gets copied
+    if (item === ".gitignore") {
+      const content = fs.readFileSync(srcPath, "utf8");
+      fs.writeFileSync(destPath, content, "utf8");
+      return;
+    }
+
     if (ig?.ignores(relativePath)) {
       return;
     }
