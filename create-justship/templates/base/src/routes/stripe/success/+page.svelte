@@ -1,0 +1,1 @@
+<div>Payment successful!</div>
