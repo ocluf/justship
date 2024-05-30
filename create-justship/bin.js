@@ -98,16 +98,15 @@ await create(cwd, {
   svelte5: true,
 });
 removePageSvelte(cwd);
-await createJustShip(cwd, { name: "" });
-
 const features = ["base"];
 if (options.features.includes("stripe")) {
   // write stripe template files
   features.push("stripe");
   writeTemplateFiles(cwd, "stripe");
 }
-
 constructAndWriteEnvFile(envjson, features, cwd);
+
+await createJustShip(cwd, { name: "" });
 
 console.log("\nNext steps:");
 let i = 1;
