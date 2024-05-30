@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="mx-auto flex gap-5 w-fit mt-10">
-					<a href="https://github.com/ocluf" class="btn w-fit flex items-center space-x-2">
+					<a href="https://github.com/ocluf/justship" class="btn w-fit flex items-center space-x-2">
 						<svg class="w-6" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
 								fill-rule="evenodd"
@@ -41,7 +41,7 @@
 								fill="#1B1F23"
 							/>
 						</svg>
-						<div class="font-bold text-lg">225</div>
+						<div class="font-bold text-lg">229</div>
 					</a>
 					<a class="btn btn-accent" href="https://buy.stripe.com/fZeg0WcSa43cfXW8wy">
 						<PiggyBank class="mr-2" />support just ship
@@ -238,11 +238,11 @@
 						<div class="absolute left-0 top-0 flex items-center justify-center rounded-lg">
 							<PiggyBank class="text-accent-content bg-accent rounded-box p-2 w-10 h-10" />
 						</div>
-						Deploy to production for free
+						Payments with stripe
 					</dt>
 					<dd class="mt-2 text-base leading-7 text-base-content text-opacity-85">
-						Besides the code being free this boilerplate is made for platforms with generous free
-						tiers like Vercel and Turso.
+						Everything you need to start accepting payments with stripe. Just fill in your keys and
+						start making money.
 					</dd>
 				</div>
 				<div class="relative pl-16">
@@ -272,7 +272,7 @@
 		<div>
 			<h2 class="font-bold text-lg mb-5">Hi! I'm Fulco</h2>
 			<p class="mb-5 text-lg">
-				I'm a fullstack developer who <b>loves</b> Svelte and SvelteKit. Over the past year, I've noticed
+				I'm a fullstack developer who <b>loves</b> Svelte 5 and SvelteKit. Over the past year, I've noticed
 				a surge in paid SaaS boilerplates.
 			</p>
 			<p class="mb-5 text-lg">
@@ -284,15 +284,16 @@
 				updated as much post launch.
 			</p>
 			<p class="mb-5 text-lg">
-				That is why I want to propose the following <b>gentleman's agreement</b>.
+				That is why I deciced to go with a hybrid model for Just Ship. The base boilerplate with
+				must have feautures like <b>auth, email, and payments</b> will stay free and open-source.
 			</p>
 			<p class="mb-5 text-lg">
-				This boilerplate will stay free and opensource. <b>But</b>, if it does save you hours of
-				work <b>and</b> you can afford it. You support Just Ship by making a donation.
+				In the future I would like to add some paid modules to make the project sustainable, but
+				first I want to focus on making the base boilerplate the best svelte boilerplate there is.
 			</p>
 		</div>
 		<div class="ml-auto flex gap-5 w-fit mt-16">
-			<a href="https://github.com/ocluf" class="btn w-fit flex items-center space-x-2">
+			<a href="https://github.com/ocluf/justship" class="btn w-fit flex items-center space-x-2">
 				<svg class="w-6" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						fill-rule="evenodd"
@@ -305,7 +306,7 @@
 				<div>Star on Github</div>
 			</a>
 			<a class="btn btn-accent" href="https://buy.stripe.com/eVa8yug4m2Z86nm9AB">
-				support Just Ship
+				Support Just Ship
 			</a>
 		</div>
 	</div>
@@ -349,7 +350,7 @@
 				</div>
 				<div class="relative pl-9">
 					<dt class="font-semibold text-base-content">
-						<!-- <svg
+						<svg
 							class="absolute left-0 top-1 h-5 w-5 text-accent"
 							viewBox="0 0 20 20"
 							fill="currentColor"
@@ -360,11 +361,11 @@
 								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
 								clip-rule="evenodd"
 							/>
-						</svg> -->
-						Posthog Analytics
+						</svg>
+						Payments with Stripe
 					</dt>
 					<dd class="mt-2 text-base-content text-opacity-75">
-						Add posthog analytics in a way that events aren't blocked by adblockers.
+						Setup the webhooks to listen for succesful payments from stripe.
 					</dd>
 				</div>
 				<div class="relative pl-9">
@@ -381,10 +382,10 @@
 								clip-rule="evenodd"
 							/>
 						</svg> -->
-						Payments with Stripe
+						Posthog Analytics
 					</dt>
 					<dd class="mt-2 text-base-content text-opacity-75">
-						Setup the webhooks to listen for succesful payments from stripe.
+						Add posthog analytics in a way that events aren't blocked by adblockers.
 					</dd>
 				</div>
 				<div class="relative pl-9">
@@ -422,10 +423,10 @@
 								clip-rule="evenodd"
 							/>
 						</svg> -->
-						Blog components
+						Better transactional emails
 					</dt>
 					<dd class="mt-2 text-base-content text-opacity-75">
-						A way to easily deploy blogs that have all the things neccesary for SEO.
+						Use svelte-emails to create better looking and programmatic transactional emails.
 					</dd>
 				</div>
 				<div class="relative pl-9">
