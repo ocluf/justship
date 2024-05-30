@@ -6,8 +6,7 @@ import { dist, mkdirp } from "./utils.js";
 import ignore from "ignore";
 
 /** @type {import('./types/index.js').create} */
-export async function create(cwd, options) {
-  mkdirp(cwd);
+export async function createJustShip(cwd, options) {
   writeTemplateFiles(cwd, "base");
 }
 
@@ -16,12 +15,82 @@ export async function create(cwd, options) {
  * @param {string} cwd
  * * @param {string} template
  */
-function writeTemplateFiles(cwd, template) {
+export function writeTemplateFiles(cwd, template) {
   const templateDir = path.resolve(dist(`templates/${template}`));
   const targetDir = path.resolve(cwd);
   const ig = loadIgnoreConfig(templateDir);
 
   copyTemplate(templateDir, targetDir, ig, cwd);
+}
+
+/**
+ * Remove the +page.svelte file at the given route directory.
+ * @param {string} cwd - The current working directory to start from.
+ */
+export function removePageSvelte(cwd) {
+  // Construct the full path to the +page.svelte file
+  const fullPath = path.resolve(cwd, "src", "routes", "+page.svelte");
+
+  if (fs.existsSync(fullPath)) {
+    fs.unlinkSync(fullPath);
+  } else {
+    console.error(`File ${fullPath} does not exist.`);
+  }
+}
+
+/**
+ * Construct the .env file content from a JSON structure and write it to a file.
+ * @param {object} jsonConfig - The JSON configuration object.
+ * @param {string[]} sectionsToInclude - The sections of the JSON that should be included in the .env file.
+ * @param {string} cwd - The current working directory to start from.
+ */
+export function constructAndWriteEnvFile(jsonConfig, sectionsToInclude, cwd) {
+  let envContent = "";
+
+  // Helper function to process private sections
+  function processPrivateSection(section) {
+    let privateContent = "";
+    for (let [key, value] of Object.entries(section)) {
+      if (value && typeof value === "object") {
+        privateContent += `# ${key}\n`;
+        for (let [envVar, envValue] of Object.entries(value)) {
+          privateContent += `${envVar}=${envValue === null ? "" : envValue}\n`;
+        }
+        privateContent += "\n"; // add spacing after each private section
+      }
+    }
+    return privateContent;
+  }
+
+  let privateContent = "";
+
+  sectionsToInclude.forEach((section) => {
+    if (jsonConfig[section]) {
+      console.log(`Processing section: ${section}`); // Debugging
+
+      if (jsonConfig[section].private) {
+        privateContent += processPrivateSection(jsonConfig[section].private);
+      }
+
+      if (jsonConfig[section].public) {
+        envContent += "# Public variables\n";
+        for (let [key, value] of Object.entries(jsonConfig[section].public)) {
+          envContent += `${key}=${value === null ? "" : value}\n`;
+        }
+        envContent += "\n"; // add spacing after public section
+      }
+    }
+  });
+
+  if (privateContent) {
+    envContent =
+      "# Private server-side variables\n" + privateContent + "\n" + envContent;
+  }
+
+  // Write the content to the .env file in the given cwd
+  const envFilePath = path.join(cwd, ".env");
+  fs.writeFileSync(envFilePath, envContent.trim(), "utf8");
+  console.log(`.env file has been written to ${envFilePath}`);
 }
 
 /**

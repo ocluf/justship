@@ -59,6 +59,9 @@
 					Welcome to {PUBLIC_PROJECT_NAME}
 				</div>
 			</div>
+			<div class="text-red-500">
+				note: I turned of email login to use the free tier for another project
+			</div>
 			{#if data.user}
 				<a href="/" class="btn btn-primary font-semibold text-md md:text-lg mt-4 w-full"
 					>Continue with current account

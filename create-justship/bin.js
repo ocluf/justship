@@ -1,15 +1,27 @@
 #!/usr/bin/env node
 
-import fs from "node:fs";
+import fs, { write } from "node:fs";
 import path from "node:path";
 import * as p from "@clack/prompts";
 import { bold, cyan, grey } from "kleur/colors";
-import { create } from "./index.js";
+import { create } from "create-svelte";
 import { package_manager } from "./utils.js";
+import {
+  constructAndWriteEnvFile,
+  createJustShip,
+  removePageSvelte,
+  writeTemplateFiles,
+} from "./index.js";
 
 const { version } = JSON.parse(
   fs.readFileSync(new URL("package.json", import.meta.url), "utf-8")
 );
+
+const envjson = JSON.parse(
+  fs.readFileSync(new URL("./templates/env.json", import.meta.url), "utf-8")
+);
+
+console.log(envjson);
 let cwd = process.argv[2] || ".";
 console.log(`${grey(`create-justship version ${version}`)}`);
 
@@ -42,9 +54,60 @@ if (fs.existsSync(cwd)) {
   }
 }
 
+const options = await p.group(
+  {
+    features: () =>
+      p.multiselect({
+        message: "Select additional options (use arrow keys/space bar)",
+        required: false,
+        options: [
+          {
+            value: "eslint",
+            label: "Add ESLint for code linting",
+          },
+          {
+            value: "prettier",
+            label: "Add Prettier for code formatting",
+          },
+          {
+            value: "playwright",
+            label: "Add Playwright for browser testing",
+          },
+          {
+            value: "vitest",
+            label: "Add Vitest for unit testing",
+          },
+          {
+            value: "stripe",
+            label: "Add Stripe for payments",
+          },
+        ],
+      }),
+  },
+  { onCancel: () => process.exit(1) }
+);
+
 await create(cwd, {
   name: path.basename(path.resolve(cwd)),
+  template: "skeleton",
+  types: "typescript",
+  prettier: options.features.includes("prettier"),
+  eslint: options.features.includes("eslint"),
+  playwright: options.features.includes("playwright"),
+  vitest: options.features.includes("vitest"),
+  svelte5: true,
 });
+removePageSvelte(cwd);
+await createJustShip(cwd, { name: "" });
+
+const features = ["base"];
+if (options.features.includes("stripe")) {
+  // write stripe template files
+  features.push("stripe");
+  writeTemplateFiles(cwd, "stripe");
+}
+
+constructAndWriteEnvFile(envjson, features, cwd);
 
 console.log("\nNext steps:");
 let i = 1;
