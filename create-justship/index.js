@@ -75,6 +75,10 @@ export function constructAndWriteEnvFile(jsonConfig, sectionsToInclude, cwd) {
       if (jsonConfig[section].public) {
         envContent += "# Public variables\n";
         for (let [key, value] of Object.entries(jsonConfig[section].public)) {
+          // Set the value to cwd if the key is PUBLIC_PROJECT_NAME
+          if (key === "PUBLIC_PROJECT_NAME") {
+            value = cwd;
+          }
           envContent += `${key}=${value === null ? "" : value}\n`;
         }
         envContent += "\n"; // add spacing after public section
@@ -90,7 +94,6 @@ export function constructAndWriteEnvFile(jsonConfig, sectionsToInclude, cwd) {
   // Write the content to the .env file in the given cwd
   const envFilePath = path.join(cwd, ".env");
   fs.writeFileSync(envFilePath, envContent.trim(), "utf8");
-  console.log(`.env file has been written to ${envFilePath}`);
 }
 
 /**

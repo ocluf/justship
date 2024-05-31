@@ -1,6 +1,6 @@
 {
   "name": "create-justship",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "\"A CLI for creating justship boilerplates\" ",
   "main": "index.js",
   "bin": {
@@ -8,7 +8,9 @@
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "node ./bin.js test",
+    "remove": "rm -rf ./test"
   },
   "repository": {
     "type": "git",

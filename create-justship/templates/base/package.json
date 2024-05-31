@@ -28,6 +28,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@css-inline/css-inline": "^0.14.1",
     "@internationalized/date": "^3.5.4",
     "@libsql/client": "^0.6.0",
     "@lucia-auth/adapter-drizzle": "^1.0.7",
