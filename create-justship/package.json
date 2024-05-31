@@ -1,6 +1,6 @@
 {
   "name": "create-justship",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "description": "\"A CLI for creating justship boilerplates\" ",
   "main": "index.js",
   "bin": {

@@ -43,8 +43,14 @@ export function removePageSvelte(cwd) {
  * @param {object} jsonConfig - The JSON configuration object.
  * @param {string[]} sectionsToInclude - The sections of the JSON that should be included in the .env file.
  * @param {string} cwd - The current working directory to start from.
+ * @param {string} projectName - The name of the project
  */
-export function constructAndWriteEnvFile(jsonConfig, sectionsToInclude, cwd) {
+export function constructAndWriteEnvFile(
+  jsonConfig,
+  sectionsToInclude,
+  cwd,
+  projectName
+) {
   let envContent = "";
 
   // Helper function to process private sections
@@ -66,8 +72,6 @@ export function constructAndWriteEnvFile(jsonConfig, sectionsToInclude, cwd) {
 
   sectionsToInclude.forEach((section) => {
     if (jsonConfig[section]) {
-      console.log(`Processing section: ${section}`); // Debugging
-
       if (jsonConfig[section].private) {
         privateContent += processPrivateSection(jsonConfig[section].private);
       }
@@ -77,7 +81,7 @@ export function constructAndWriteEnvFile(jsonConfig, sectionsToInclude, cwd) {
         for (let [key, value] of Object.entries(jsonConfig[section].public)) {
           // Set the value to cwd if the key is PUBLIC_PROJECT_NAME
           if (key === "PUBLIC_PROJECT_NAME") {
-            value = cwd;
+            value = projectName;
           }
           envContent += `${key}=${value === null ? "" : value}\n`;
         }

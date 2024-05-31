@@ -21,11 +21,10 @@ const envjson = JSON.parse(
   fs.readFileSync(new URL("./templates/env.json", import.meta.url), "utf-8")
 );
 
-console.log(envjson);
 let cwd = process.argv[2] || ".";
 console.log(`${grey(`create-justship version ${version}`)}`);
 
-p.intro("Welcome to JustShip! ");
+p.intro("Welcome to Just Ship! ");
 
 if (cwd === ".") {
   const dir = await p.text({
@@ -53,6 +52,12 @@ if (fs.existsSync(cwd)) {
     }
   }
 }
+
+const projectName = await p.text({
+  message:
+    'What is your project name? (Used in email template e.g "Just Ship")',
+  placeholder: cwd,
+});
 
 const options = await p.group(
   {
@@ -104,9 +109,9 @@ if (options.features.includes("stripe")) {
   features.push("stripe");
   writeTemplateFiles(cwd, "stripe");
 }
-constructAndWriteEnvFile(envjson, features, cwd);
+constructAndWriteEnvFile(envjson, features, cwd, projectName.toString());
 
-await createJustShip(cwd, { name: "" });
+await createJustShip(cwd, { name: projectName.toString() });
 
 console.log("\nNext steps:");
 let i = 1;
