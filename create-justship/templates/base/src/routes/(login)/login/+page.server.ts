@@ -11,11 +11,10 @@ import {
   createEmailVerificationToken,
   deleteAllEmailTokensForUser,
 } from "$lib/server/database/emailtoken.model.js";
-import { loginWithEmailTemplate, sendEmail } from "$lib/server/email/email.js";
+import { loginEmailHtmlTemplate, sendEmail } from "$lib/server/email/email.js";
 import { env } from "$env/dynamic/private";
 import { env as public_env } from "$env/dynamic/public";
 import { lucia } from "$lib/server/auth";
-import { loginEmailHtmlTemplate } from "../../../lib/server/email/email";
 
 // Name has a default value just to display something in the form.
 const schema = z.object({

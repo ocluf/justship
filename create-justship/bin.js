@@ -57,6 +57,7 @@ const projectName = await p.text({
   message:
     'What is your project name? (Used in email template e.g "Just Ship")',
   placeholder: cwd,
+  defaultValue: cwd,
 });
 
 const options = await p.group(

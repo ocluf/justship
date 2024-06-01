@@ -11,7 +11,8 @@
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
     "generate": "drizzle-kit generate",
-    "migrate": "tsx ./migrate.ts"
+    "migrate": "tsx ./migrate.ts",
+    "migrate:prod": "tsx ./migrate.ts --prod"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.10",
