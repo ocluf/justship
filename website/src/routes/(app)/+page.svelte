@@ -1,10 +1,12 @@
 <script>
 	import CopyText from '$lib/components/CopyText.svelte';
 	import { Link, Palette, PiggyBank, SquarePlus } from 'lucide-svelte';
+
+	let { data } = $props();
 </script>
 
-<div>
-	<div class="relative p-5 lg:px-10">
+<div class="max-w-[85rem] mx-auto">
+	<div class="relative px-4 sm:px-6 lg:px-8">
 		<div
 			class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 			aria-hidden="true"
@@ -31,7 +33,11 @@
 					</div>
 				</div>
 				<div class="mx-auto flex gap-5 w-fit mt-10">
-					<a href="https://github.com/ocluf/justship" class="btn w-fit flex items-center space-x-2">
+					<a
+						href="https://github.com/ocluf/justship"
+						data-theme="light"
+						class="btn w-fit flex items-center space-x-2"
+					>
 						<svg class="w-6" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
 								fill-rule="evenodd"
@@ -41,7 +47,7 @@
 								fill="#1B1F23"
 							/>
 						</svg>
-						<div class="font-bold text-lg">229</div>
+						<div class="font-bold text-lg">{data.stars}</div>
 					</a>
 					<a class="btn btn-accent" href="https://buy.stripe.com/fZeg0WcSa43cfXW8wy">
 						<PiggyBank class="mr-2" />support just ship
@@ -60,7 +66,7 @@
 		</div>
 	</div>
 
-	<div class="px-5 lg:px-10 pb-32 lg:pb-48 flex flex-wrap gap-10 lg:gap-14 justify-center">
+	<div class="px-4 sm:px-6 lg:px-8 pb-32 lg:pb-48 flex flex-wrap gap-10 lg:gap-14 justify-center">
 		<div>
 			<svg
 				class="h-16 lg:h-20 p-1 rounded-xl"
@@ -197,8 +203,8 @@
 		</div>
 	</div>
 </div>
-<div class="py-24 sm:py-32" data-theme="dark">
-	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+<div class="py-24 sm:py-32 bg-base-200" data-theme="">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl lg:text-center">
 			<h2 class="text-base font-semibold leading-7 text-accent">Deploy faster</h2>
 			<p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -293,7 +299,11 @@
 			</p>
 		</div>
 		<div class="ml-auto flex gap-5 w-fit mt-16">
-			<a href="https://github.com/ocluf/justship" class="btn w-fit flex items-center space-x-2">
+			<a
+				href="https://github.com/ocluf/justship"
+				data-theme="light"
+				class="btn w-fit flex items-center space-x-2"
+			>
 				<svg class="w-6" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						fill-rule="evenodd"
@@ -311,7 +321,7 @@
 		</div>
 	</div>
 </div>
-<div class="py-24 sm:py-32" data-theme="dark">
+<div class="py-24 sm:py-32 bg-base-200">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div
 			class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
@@ -476,7 +486,7 @@
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-xl text-center">
 			<h2 class="text-lg font-semibold leading-8 tracking-tight text-accent">Testimonials</h2>
-			<p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+			<p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
 				This is where I'd put my testimonials if I had them
 			</p>
 		</div>

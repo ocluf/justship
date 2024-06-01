@@ -4,7 +4,6 @@ node_modules
 /.svelte-kit
 .vite
 /package
-drizzle
 .env
 .env.*
 !.env.example
