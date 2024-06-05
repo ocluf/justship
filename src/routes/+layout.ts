@@ -22,10 +22,10 @@ export const load = async () => {
 		pageDescription: PUBLIC_DEFAULT_DESCRIPTION,
 		twitterCard: 'summary_large_image',
 		twitterSite: PUBLIC_ORIGIN,
-		twitterImage: `${PUBLIC_ORIGIN}/socialcard.jpg`,
+		twitterImage: `${PUBLIC_ORIGIN}/socialcard.jpeg`,
 		ogType: 'website',
 		ogUrl: PUBLIC_ORIGIN,
-		ogImage: `${PUBLIC_ORIGIN}/socialcard.jpg`
+		ogImage: `${PUBLIC_ORIGIN}/socialcard.jpeg`
 	};
 	return seo;
 };
