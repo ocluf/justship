@@ -53,7 +53,7 @@ export const actions = {
 			origin + '/login/email-verification?verification_token=' + verification_token;
 
 		await sendEmail({
-			from: `${public_env.PUBLIC_PROJECT_NAME} <${env.RESEND_EMAIL}>`,
+			from: `${public_env.PUBLIC_PROJECT_NAME} <${env.FROM_EMAIL}>`,
 			to: user.email,
 			subject: `Your activation link for ${public_env.PUBLIC_PROJECT_NAME}`,
 			html: loginEmailHtmlTemplate({

@@ -20,3 +20,10 @@ export const emailVerificationTokenTable = sqliteTable('email_verification_token
 	email: text('email').notNull(),
 	expires_at: integer('expires_at', { mode: 'timestamp' }).notNull()
 });
+
+export const emailSigninTable = sqliteTable('email_signin', {
+	id: text('id').notNull().primaryKey(),
+	ip_address: text('ip_address').notNull(),
+	user_agent: text('user_agent').notNull(),
+	email: text('email').notNull()
+});
