@@ -21,9 +21,9 @@ export const emailVerificationTokenTable = sqliteTable('email_verification_token
 	expires_at: integer('expires_at', { mode: 'timestamp' }).notNull()
 });
 
-export const emailSigninTable = sqliteTable('email_signin', {
-	id: text('id').notNull().primaryKey(),
+export const signinTable = sqliteTable('signin', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	logged_in_at: integer('logged_in_at', { mode: 'timestamp' }).notNull(),
 	ip_address: text('ip_address').notNull(),
-	user_agent: text('user_agent').notNull(),
 	email: text('email').notNull()
 });

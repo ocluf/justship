@@ -13,10 +13,11 @@ import { env } from '$env/dynamic/private';
 import { env as public_env } from '$env/dynamic/public';
 import { lucia } from '$lib/server/auth';
 import { PUBLIC_ORIGIN } from '$env/static/public';
+import { createSignin, getSignins } from '$lib/server/database/signin.model';
 
 // Name has a default value just to display something in the form.
 const schema = z.object({
-	email: z.string().email()
+	email: z.string().trim().email()
 });
 
 export const load = async (e) => {
@@ -26,7 +27,7 @@ export const load = async (e) => {
 };
 
 export const actions = {
-	login_with_email: async ({ request }) => {
+	login_with_email: async ({ request, getClientAddress }) => {
 		const form = await superValidate(request, zod(schema));
 
 		if (!form.valid) {
@@ -45,6 +46,26 @@ export const actions = {
 				throw error(500, 'Failed to create new user');
 			}
 		}
+
+		let ip_address = getClientAddress();
+
+		const signins = await getSignins({
+			email: form.data.email,
+			ip_address
+		});
+
+		if (signins.length > 20) {
+			form.errors.email = [
+				'Too many signins from this IP address in the last hour, please try again later'
+			];
+			return fail(429, { form });
+		}
+
+		await createSignin({
+			email: form.data.email,
+			ip_address,
+			logged_in_at: new Date()
+		});
 
 		await deleteAllEmailTokensForUser(user.id);
 		const verification_token = await createEmailVerificationToken(user.id, user.email);

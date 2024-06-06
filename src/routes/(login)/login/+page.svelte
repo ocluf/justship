@@ -17,9 +17,9 @@
 			if (event.result.type === 'success') {
 				email_sent = true;
 			}
-			if (event.result.type === 'error') {
-				console.error(event.result);
-			}
+		},
+		onError(event) {
+			console.log('test:');
 		}
 	});
 
