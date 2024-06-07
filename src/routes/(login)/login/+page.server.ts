@@ -14,6 +14,7 @@ import { env as public_env } from '$env/dynamic/public';
 import { lucia } from '$lib/server/auth';
 import { PUBLIC_ORIGIN } from '$env/static/public';
 import { createSignin, getSignins } from '$lib/server/database/signin.model';
+import { dev } from '$app/environment';
 
 // Name has a default value just to display something in the form.
 const schema = z.object({
@@ -54,7 +55,9 @@ export const actions = {
 			ip_address
 		});
 
-		if (signins.length > 20) {
+		const ratelimit = env.SIGNIN_IP_RATELIMIT ? parseInt(env.SIGNIN_IP_RATELIMIT) : 20;
+
+		if (signins.length > ratelimit) {
 			form.errors.email = [
 				'Too many signins from this IP address in the last hour, please try again later'
 			];
