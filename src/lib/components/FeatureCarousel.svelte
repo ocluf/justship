@@ -1,5 +1,4 @@
 <script lang="ts">
-	//@ts-nocheck
 	// even though it works typescript complains about onemblaInit instead of on:emblaInit
 	import type { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
@@ -12,13 +11,20 @@
 
 	const options: EmblaOptionsType = {
 		align: 'center',
-		loop: true
+		loop: true,
+		inViewThreshold: 1
 	};
+
+	function updateSelected(emblaApi: EmblaCarouselType): void {
+		let slidesIndexes = emblaApi.slidesInView();
+		if (slidesIndexes.length > 0) {
+			index = slidesIndexes[0];
+		}
+	}
 
 	function onInit(event: { detail: EmblaCarouselType }) {
 		emblaApi = event.detail;
-		console.log('test');
-		console.log(emblaApi.slideNodes()); // Access API
+		emblaApi.on('slidesInView', updateSelected);
 	}
 
 	function setIndex(newIndex: number) {

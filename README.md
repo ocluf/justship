@@ -38,6 +38,7 @@ Feel free to contribute or suggest improvements! 🤝
 - [x] 404 page
 - [x] Replace Resend with Postmark
 - [ ] Landing page components
+- [ ] docs
   - [x] Hero
   - [x] FAQ
   - [x] Personal Story
@@ -47,6 +48,5 @@ Feel free to contribute or suggest improvements! 🤝
   - [ ] Problem Agition
   - [ ] Wall of Love
 - [ ] Blog Section
-- [ ] Add rate limiting to email login
-- [ ] docs
+- [x] Add rate limiting to email login
 - [ ] Improve stripe section
