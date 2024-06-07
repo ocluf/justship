@@ -11,15 +11,12 @@
 	let show_email_input = $state(false);
 	let email_sent = $state(false);
 
-	const { form, enhance, errors } = superForm(data.form, {
+	const { enhance, errors, submitting } = superForm(data.form, {
 		onResult(event) {
 			console.log(event);
 			if (event.result.type === 'success') {
 				email_sent = true;
 			}
-		},
-		onError(event) {
-			console.log('test:');
 		}
 	});
 
@@ -92,8 +89,15 @@
 					{/if}
 
 					{#if show_email_input}
-						<button type="submit" class="btn font-semibold text-md sm:text-lg w-full"
-							>Continue
+						<button
+							type="submit"
+							disabled={$submitting}
+							class="btn font-semibold text-md sm:text-lg w-full"
+						>
+							{#if $submitting}
+								<span class="loading loading-spinner loading-xs mr-2"></span>
+							{/if}
+							<span>Continue</span>
 						</button>
 					{:else}
 						<button

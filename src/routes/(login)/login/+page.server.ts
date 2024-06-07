@@ -55,6 +55,11 @@ export const actions = {
 			ip_address
 		});
 
+		// wait for 2 seconds to simulate a slow login
+		if (dev) {
+			await new Promise((resolve) => setTimeout(resolve, 2000));
+		}
+
 		const ratelimit = env.SIGNIN_IP_RATELIMIT ? parseInt(env.SIGNIN_IP_RATELIMIT) : 20;
 
 		if (signins.length > ratelimit) {
