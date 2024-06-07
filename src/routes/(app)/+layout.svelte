@@ -1,19 +1,10 @@
 <script lang="ts">
-	import { env } from '$env/dynamic/public';
-	import { LogOut } from 'lucide-svelte';
-	import { enhance } from '$app/forms';
 	import Header from '$lib/components/Header.svelte';
 
-	let { data, children } = $props();
-
-	const links = [
-		{ name: 'Pricing', href: '/' },
-		{ name: 'Demo', href: '/' },
-		{ name: 'Blog', href: '/' }
-	];
+	let { children } = $props();
 </script>
 
-<Header {links}></Header>
+<Header></Header>
 <!-- <header
 	class="sticky p-2 top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
