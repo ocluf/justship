@@ -14,7 +14,7 @@
 #### Local Development
 
 - Run `npm install --legacy-peer-deps` or `pnpm install`
-- Create a `.env` file and copy over `.env.example`
+- Rename the `.env.example` file to `.env`
 - Run `npm run generate && npm run migrate` to create a local database
 - Install mailpit to receive emails locally https://mailpit.axllent.org/docs/install/
 - run `npm run dev`
