@@ -1,9 +1,9 @@
-# Just Ship - An batteries included Svelte 5 SaaS Boilerplate
+# Just Ship - A batteries included Svelte 5 SaaS Boilerplate
 
 ### Comes With
 
-- 💻 **Svelte 5 and sveltekit 2**
-- 🚪 **Auth** (both social and with magic link, using Lucia)
+- 💻 **Svelte 5 and SvelteKit 2**
+- 🚪 **Auth** (both social and magic link, using Lucia)
 - 📧 **Sending Emails** (using Postmark)
 - 🎨 **Styling** (using tailwindcss and daisyUI )
 - 📦 **Database** (using turso and drizzle as ORM)
@@ -14,7 +14,7 @@
 #### Local Development
 
 - Run `npm install --legacy-peer-deps` or `pnpm install`
-- Rename the `.env.example` file to `.env`
+- Rename the `.env.example` file to `.env` and __populate it with your own values__
 - Run `npm run generate && npm run migrate` to create a local database
 - Install mailpit to receive emails locally https://mailpit.axllent.org/docs/install/
 - run `npm run dev`
