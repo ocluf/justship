@@ -37,15 +37,14 @@ Feel free to contribute or suggest improvements! 🤝
 - [x] SEO Setup
 - [x] 404 page
 - [x] Replace Resend with Postmark
-- [ ] Landing page components
 - [ ] docs
+- [ ] Landing page components
   - [x] Hero
   - [x] FAQ
   - [x] Personal Story
   - [x] Footer
   - [x] Pricing
   - [x] Features
-  - [ ] Problem Agition
   - [ ] Wall of Love
 - [ ] Blog Section
 - [x] Add rate limiting to email login
