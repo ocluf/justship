@@ -1,39 +1,32 @@
 import { createClient } from "@libsql/client";
-import * as dotenv from "dotenv";
+import "dotenv/config";
 import { drizzle } from "drizzle-orm/libsql";
 import { migrate } from "drizzle-orm/libsql/migrator";
+import * as schema from './src/lib/server/db/schema';
 
-// Load environment variables from .env file
-dotenv.config();
+try {
+	dotenv.config();
 
-// Get the command-line arguments
-const args = process.argv.slice(2);
-const isProd = args.includes("--prod");
+	if (!process.env.TURSO_DB_URL) {
+		throw new Error("Database URL was not provided");
+	}
 
-// Determine the database URL based on the argument
-const dbUrl = isProd ? process.env.TURSO_DB_URL : "file:local.db";
+	const dbClient = createClient({
+		url: process.env.TURSO_DB_URL!,
+		authToken: process.env.TURSO_DB_AUTH_TOKEN!,
+	});
 
-if (!dbUrl) {
-  throw new Error("Database URL not provided");
+	const drizzleClient = drizzle(client, { schema });
+
+	await migrate(drizzleClient, {
+		migrationsFolder: "./drizzle",
+	});
+
+  client.close();
+
+	console.log("Migrated successfully");
+	process.exit(0);
+} catch (e) {
+	console.error(`An error has occurred while migrating schema changes: ${e}`);
+	process.exit(1);
 }
-
-// Create the database client
-const dbClient = createClient({
-  url: dbUrl,
-  authToken: process.env.TURSO_DB_AUTH_TOKEN as string,
-});
-
-// Create the drizzle client
-const drizzleClient = drizzle(dbClient);
-
-// Run the migration
-migrate(drizzleClient, {
-  migrationsFolder: "./drizzle",
-})
-  .then(() => {
-    console.log("Migrations completed");
-    process.exit(0);
-  })
-  .catch((err) => {
-    throw err;
-  });
