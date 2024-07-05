@@ -5,6 +5,6 @@ export default {
 	dialect: 'sqlite',
 	driver: 'turso',
 	dbCredentials: {
-		url: ''
+		url: 'file:local.db'
 	}
 } satisfies Config;
