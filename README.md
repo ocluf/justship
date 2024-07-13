@@ -32,6 +32,10 @@
 
 Feel free to contribute or suggest improvements! 🤝
 
+### How to setup Just Ship the youtube tutorial
+
+[![How to use Just Ship](https://img.youtube.com/vi/sJZOXUhkvMc/0.jpg)](https://www.youtube.com/watch?v=sJZOXUhkvMc)
+
 ### Roadmap
 
 - [x] SEO Setup
