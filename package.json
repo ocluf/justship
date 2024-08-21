@@ -35,6 +35,7 @@
 		"postcss": "^8.4.40",
 		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.2.6",
+		"super-sitemap": "^0.15.1",
 		"svelte": "^5.0.0-next.1",
 		"svelte-check": "^3.8.4",
 		"sveltekit-superforms": "2.16.1",
