@@ -19,7 +19,6 @@
 	}
 	const meta = $derived(
 		getMeta({
-			siteName: PUBLIC_PROJECT_NAME,
 			defaultTitle: PUBLIC_DEFAULT_TITLE,
 			defaultDescription: PUBLIC_DEFAULT_DESCRIPTION,
 			defaultOGImage: '/socialcard.jpeg',

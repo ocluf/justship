@@ -57,8 +57,6 @@ export function formatTitle({
 		arr.push(title);
 	}
 
-	arr.push(siteName);
-
 	if (page > 1) {
 		arr.push(`Page ${page}`);
 	}
@@ -89,7 +87,6 @@ export function getCanonicalUrl(url: URL, pageParam: string | undefined) {
 }
 
 export type GetMetaParms = {
-	siteName: string;
 	defaultTitle: string;
 	defaultDescription: string;
 	defaultOGImage: string;
@@ -119,7 +116,6 @@ export type GetMetaParms = {
  * and fallback logic for various metadata fields.
  */
 export function getMeta({
-	siteName,
 	defaultTitle,
 	defaultDescription,
 	defaultOGImage,
@@ -128,7 +124,6 @@ export function getMeta({
 	url
 }: GetMetaParms): FullMeta {
 	const title = formatTitle({
-		siteName,
 		title: routeMeta?.title ?? defaultTitle,
 		pageParam: pageParam ?? ''
 	});
