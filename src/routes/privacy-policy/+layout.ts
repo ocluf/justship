@@ -1,10 +1,10 @@
 import { PUBLIC_PROJECT_NAME } from '$env/static/public';
-import type { Seo } from '$lib/types';
+import type { Meta } from '$lib/meta';
 
 export const load = async () => {
-	const seo: Seo = {
-		pageTitle: `${PUBLIC_PROJECT_NAME} | Privacy Policy`,
-		pageDescription: `The privacy policy for ${PUBLIC_PROJECT_NAME}`
+	const meta: Meta = {
+		title: `${PUBLIC_PROJECT_NAME} | Privacy Policy`,
+		description: `The privacy policy for ${PUBLIC_PROJECT_NAME}`
 	};
-	return seo;
+	return { meta };
 };

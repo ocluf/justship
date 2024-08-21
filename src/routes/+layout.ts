@@ -1,12 +1,6 @@
 import posthog from 'posthog-js';
 import { browser, dev } from '$app/environment';
-import {
-	PUBLIC_DEFAULT_DESCRIPTION,
-	PUBLIC_DEFAULT_TITLE,
-	PUBLIC_ORIGIN,
-	PUBLIC_POSTHOG_KEY
-} from '$env/static/public';
-import type { DefaultSeo } from '$lib/types';
+import { PUBLIC_ORIGIN, PUBLIC_POSTHOG_KEY } from '$env/static/public';
 
 export const load = async () => {
 	if (browser && !dev) {
@@ -17,15 +11,4 @@ export const load = async () => {
 			capture_pageleave: false
 		});
 	}
-	const seo: DefaultSeo = {
-		pageTitle: PUBLIC_DEFAULT_TITLE,
-		pageDescription: PUBLIC_DEFAULT_DESCRIPTION,
-		twitterCard: 'summary_large_image',
-		twitterSite: PUBLIC_ORIGIN,
-		twitterImage: `${PUBLIC_ORIGIN}/socialcard.jpeg`,
-		ogType: 'website',
-		ogUrl: PUBLIC_ORIGIN,
-		ogImage: `${PUBLIC_ORIGIN}/socialcard.jpeg`
-	};
-	return seo;
 };
