@@ -36,20 +36,3 @@ Feel free to contribute or suggest improvements! 🤝
 
 [![How to use Just Ship](https://img.youtube.com/vi/sJZOXUhkvMc/0.jpg)](https://www.youtube.com/watch?v=sJZOXUhkvMc)
 
-### Roadmap
-
-- [x] SEO Setup
-- [x] 404 page
-- [x] Replace Resend with Postmark
-- [ ] docs
-- [ ] Landing page components
-  - [x] Hero
-  - [x] FAQ
-  - [x] Personal Story
-  - [x] Footer
-  - [x] Pricing
-  - [x] Features
-  - [ ] Wall of Love
-- [ ] Blog Section
-- [x] Add rate limiting to email login
-- [ ] Improve stripe section
