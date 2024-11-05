@@ -1,6 +1,5 @@
 <script>
 	import { Ship } from 'lucide-svelte';
-	import Container from './Container.svelte';
 	import { PUBLIC_PROJECT_NAME } from '$env/static/public';
 </script>
 
