@@ -40,15 +40,7 @@ export type FullMeta = {
 /**
  * Format title however you prefer.
  */
-export function formatTitle({
-	siteName,
-	title,
-	pageParam
-}: {
-	siteName: string;
-	title: string;
-	pageParam: string;
-}) {
+export function formatTitle({ title, pageParam }: { title: string; pageParam: string }) {
 	const page = pageParam ? Number.parseInt(pageParam) : 1;
 
 	const arr: string[] = [];
