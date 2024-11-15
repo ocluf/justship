@@ -1,4 +1,3 @@
-import { dev } from '$app/environment';
 import { lucia } from '$lib/server/auth';
 import { deleteEmailToken, getEmailToken } from '$lib/server/database/emailtoken.model';
 import { getUserById, updateUser } from '$lib/server/database/user.model';
@@ -6,12 +5,9 @@ import { isWithinExpirationDate } from 'oslo';
 
 export async function GET({ request }): Promise<Response> {
 	const verificationToken = new URL(request.url).searchParams.get('verification_token');
-	if (dev) {
-		console.log('Verification Token:', verificationToken);
-	}
 
 	if (!verificationToken) {
-		console.log('No verification token provided');
+		console.error('No verification token provided');
 		return new Response('No verification token provided', { status: 400 });
 	}
 

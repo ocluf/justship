@@ -1,4 +1,3 @@
-/* eslint-disable no-irregular-whitespace */
 import { SMTPClient } from 'emailjs';
 import { LOCAL_EMAIL, POSTMARK_SERVER_TOKEN } from '$env/static/private';
 import postmark from 'postmark';
@@ -67,7 +66,7 @@ export const sendEmail = async (options: {
 		return;
 	}
 
-	if (dev && LOCAL_EMAIL === 'true') {
+	if (LOCAL_EMAIL === 'true') {
 		return await sendTestEmail({
 			from: options.from,
 			to: options.to,
@@ -76,19 +75,21 @@ export const sendEmail = async (options: {
 		});
 	}
 
-	try {
-		const postmarkClient = new postmark.ServerClient(POSTMARK_SERVER_TOKEN);
-		const result = await postmarkClient.sendEmail({
-			From: options.from,
-			To: options.to,
-			Subject: options.subject,
-			HtmlBody: options.htmlBody,
-			TextBody: options.textBody
-		});
-		console.log(result);
-		return result;
-	} catch (error) {
-		console.error('Failed to send email:', error);
-		throw error;
+	if (!dev) {
+		try {
+			const postmarkClient = new postmark.ServerClient(POSTMARK_SERVER_TOKEN);
+			const result = await postmarkClient.sendEmail({
+				From: options.from,
+				To: options.to,
+				Subject: options.subject,
+				HtmlBody: options.htmlBody,
+				TextBody: options.textBody
+			});
+			console.log(result);
+			return result;
+		} catch (error) {
+			console.error('Failed to send email:', error);
+			throw error;
+		}
 	}
 };

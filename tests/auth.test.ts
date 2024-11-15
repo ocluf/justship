@@ -38,7 +38,7 @@ test.describe('Authentication Flow', () => {
 		await expect(page.getByText(/we've sent you an activation link/i)).toBeVisible();
 
 		// Wait a bit for the file to be written
-		await new Promise((resolve) => setTimeout(resolve, 2000));
+		await new Promise((resolve) => setTimeout(resolve, 1000));
 
 		// Read and delete the verification link file
 		const linkPath = join(process.cwd(), 'test-results', 'verification-link.txt');
