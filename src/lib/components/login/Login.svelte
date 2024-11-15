@@ -43,9 +43,7 @@
 				We've sent you an activation link. Please be sure to check your spam folder too.
 			</div>
 			{#if dev}
-				<p class="text-red-500">
-					DEV MODE ACTIVE - The verification link is logged in the terminal
-				</p>
+				<p class="text-red-500 text-xs">DEV MODE ACTIVE - The link is logged in the terminal</p>
 			{/if}
 		</div>
 	{:else}
