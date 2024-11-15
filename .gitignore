@@ -9,3 +9,7 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 local.db
+test-results
+
+#temporary
+xqw-archive

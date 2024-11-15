@@ -1,11 +1,11 @@
 /* eslint-disable no-irregular-whitespace */
 import { SMTPClient } from 'emailjs';
-import { POSTMARK_SERVER_TOKEN } from '$env/static/private';
+import { LOCAL_EMAIL, POSTMARK_SERVER_TOKEN } from '$env/static/private';
+import postmark from 'postmark';
 import { dev } from '$app/environment';
 import { inline } from '@css-inline/css-inline';
 import layout from './layout.html?raw';
 import login from './login-email.html?raw';
-import postmark from 'postmark';
 
 const localClient = new SMTPClient({
 	host: 'localhost',
@@ -57,25 +57,38 @@ const sendTestEmail = async (options: {
 };
 
 export const sendEmail = async (options: {
-	from: string;
 	to: string;
+	from: string;
 	subject: string;
-	html: string;
-	headers?: Record<string, string>;
+	htmlBody: string;
+	textBody?: string;
 }) => {
+	if (process.env.NODE_ENV === 'test') {
+		return;
+	}
+
+	if (dev && LOCAL_EMAIL === 'true') {
+		return await sendTestEmail({
+			from: options.from,
+			to: options.to,
+			subject: options.subject,
+			html: options.htmlBody
+		});
+	}
+
 	try {
-		if (dev) {
-			return await sendTestEmail(options);
-		}
 		const postmarkClient = new postmark.ServerClient(POSTMARK_SERVER_TOKEN);
 		const result = await postmarkClient.sendEmail({
 			From: options.from,
 			To: options.to,
 			Subject: options.subject,
-			HtmlBody: options.html
+			HtmlBody: options.htmlBody,
+			TextBody: options.textBody
 		});
 		console.log(result);
-	} catch (e) {
-		console.error(e);
+		return result;
+	} catch (error) {
+		console.error('Failed to send email:', error);
+		throw error;
 	}
 };

@@ -1,16 +1,16 @@
 import { google } from '$lib/server/auth';
 import { generateState, generateCodeVerifier } from 'arctic';
 import { redirect } from '@sveltejs/kit';
-
 import type { RequestEvent } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 
 export async function GET(event: RequestEvent): Promise<Response> {
 	const state = generateState();
 	const codeVerifier = generateCodeVerifier();
-	const url = await google.createAuthorizationURL(state, codeVerifier, {
-		scopes: ['https://www.googleapis.com/auth/userinfo.email', 'openid']
-	});
+	const url = await google.createAuthorizationURL(state, codeVerifier, [
+		'https://www.googleapis.com/auth/userinfo.email',
+		'openid'
+	]);
 	event.cookies.set('code_verifier', codeVerifier, {
 		secure: !dev, // set to false in localhost
 		path: '/',
