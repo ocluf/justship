@@ -10,5 +10,7 @@
 		>Continue with current account
 	</a>
 {:else}
-	<Login data={data.form} />
+	<div class="flex items-center justify-center min-h-[90vh]">
+		<Login data={data.form} />
+	</div>
 {/if}
