@@ -10,7 +10,6 @@
 		PUBLIC_DEFAULT_TITLE,
 		PUBLIC_PROJECT_NAME
 	} from '$env/static/public';
-	import Header from '$lib/components/Header.svelte';
 
 	let { children } = $props();
 
@@ -77,5 +76,4 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<Header></Header>
 {@render children()}

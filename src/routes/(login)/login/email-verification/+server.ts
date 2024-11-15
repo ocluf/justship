@@ -5,9 +5,9 @@ import { isWithinExpirationDate } from 'oslo';
 
 export async function GET({ request }): Promise<Response> {
 	const verificationToken = new URL(request.url).searchParams.get('verification_token');
-	console.log('Verification Token:', verificationToken);
+
 	if (!verificationToken) {
-		console.log('No verification token provided');
+		console.error('No verification token provided');
 		return new Response('No verification token provided', { status: 400 });
 	}
 

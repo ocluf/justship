@@ -1,4 +1,19 @@
 <script lang="ts">
+	import type { PageData } from './$types.js';
+	import Login from '$lib/components/login/Login.svelte';
+
+	let { data }: { data: PageData } = $props();
+</script>
+
+{#if data.user}
+	<a href="/" class="btn btn-primary font-semibold text-md md:text-lg mt-4 w-full"
+		>Continue with current account
+	</a>
+{:else}
+	<Login data={data.form} />
+{/if}
+
+<!-- <script lang="ts">
 	import { PUBLIC_PROJECT_NAME } from '$env/static/public';
 	import { tick } from 'svelte';
 	import Google from '$lib/components/icons/Google.svelte';
@@ -28,14 +43,6 @@
 		}
 	};
 </script>
-
-<svelte:head>
-	<title>Svelte Saas Boilerplate</title>
-	<meta
-		name="description"
-		content="The free and open-source Svelte 5 and SvelteKit SaaS boilerplate that gets you shipping fast. Includes authentication with magic link and Google, email, styling with Tailwind CSS and DaisyUI, and Turso for the database."
-	/>
-</svelte:head>
 
 <div class="flex p-5 items-center justify-center h-screen">
 	<div class="card p-5 flex flex-col w-full max-w-[470px]">
@@ -110,4 +117,4 @@
 			{/if}
 		{/if}
 	</div>
-</div>
+</div> -->
