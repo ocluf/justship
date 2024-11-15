@@ -9,6 +9,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import { tick } from 'svelte';
 	import { Mail } from 'lucide-svelte';
+	import { dev } from '$app/environment';
 
 	let { data }: { data: SuperValidated<Infer<LoginFormSchema>> } = $props();
 	let email_input: HTMLInputElement | null = $state(null);
@@ -41,6 +42,11 @@
 			<div class="mt-4 text-muted-primary text-lg opacity-80 max-w-[32ch] mx-auto">
 				We've sent you an activation link. Please be sure to check your spam folder too.
 			</div>
+			{#if dev}
+				<p class="text-red-500">
+					DEV MODE ACTIVE - The verification link is logged in the terminal
+				</p>
+			{/if}
 		</div>
 	{:else}
 		<a
