@@ -33,5 +33,7 @@
 Feel free to contribute or suggest improvements! 🤝
 
 ### How to setup Just Ship the youtube tutorial
+(note this tutorial is slightly outdated) You don't need mailpit neccesarily I log the email login link in the console. 
+I also use shadcn now instead of daisyUI
 
 [![How to use Just Ship](https://img.youtube.com/vi/sJZOXUhkvMc/0.jpg)](https://www.youtube.com/watch?v=sJZOXUhkvMc)
