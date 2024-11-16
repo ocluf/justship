@@ -62,6 +62,7 @@
 		"@lucia-auth/adapter-drizzle": "^1.1.0",
 		"@tailwindcss/typography": "^0.5.15",
 		"arctic": "^2.0.1",
+		"dotenv": "^16.4.5",
 		"drizzle-orm": "^0.35.3",
 		"emailjs": "^4.0.3",
 		"lucia": "^3.2.2",
