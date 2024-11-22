@@ -8,9 +8,9 @@
 </script>
 
 <header
-	class="container border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur"
+	class="container border-border/40 bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur"
 >
-	<div class="flex h-14 max-w-screen-2xl items-center">
+	<div class="flex h-14 max-w-(--breakpoint-2xl) items-center">
 		<div class="mr-4 flex justify-between w-full">
 			<a href="/" class="mr-6 flex items-center space-x-2">
 				<Ship class="h-8 w-8" />

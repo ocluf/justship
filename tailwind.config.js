@@ -1,5 +1,4 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
-import tailwindcssAnimate from 'tailwindcss-animate';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -89,8 +88,7 @@ const config = {
 				'caret-blink': 'caret-blink 1.25s ease-out infinite'
 			}
 		}
-	},
-	plugins: [tailwindcssAnimate]
+	}
 };
 
 export default config;
