@@ -1,19 +1,72 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
+		// JavaScript support
 		"allowJs": true,
 		"checkJs": true,
+		
+		// Module resolution and imports
 		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
+		
+		// Type checking strictness
 		"strict": true,
-		"moduleResolution": "bundler"
-	}
-	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
-	// except $lib which is handled by https://kit.svelte.dev/docs/configuration#files
-	//
-	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
-	// from the referenced tsconfig.json - TypeScript does not merge them in
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		
+		// Code quality
+		"forceConsistentCasingInFileNames": true,
+		"allowUnusedLabels": false,
+		"allowUnreachableCode": false,
+		"noPropertyAccessFromIndexSignature": true,
+		
+		// Performance and compatibility
+		"skipLibCheck": true,
+		"verbatimModuleSyntax": true,
+		
+		// Development experience
+		"sourceMap": true,
+		"declaration": false,
+		"declarationMap": false,
+		
+		// Modern JavaScript features
+		"target": "ES2022",
+		"module": "ESNext",
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
+		
+		// Vite/SvelteKit specific
+		"types": ["vite/client", "@sveltejs/kit"],
+		"isolatedModules": true,
+		"preserveValueImports": false,
+		
+		// Path mapping (enhanced)
+		"baseUrl": ".",
+		"paths": {
+			"$lib": ["./src/lib"],
+			"$lib/*": ["./src/lib/*"]
+		}
+	},
+	"include": [
+		"ambient.d.ts",
+		"./src/**/*.d.ts",
+		"./src/**/*.js",
+		"./src/**/*.ts",
+		"./src/**/*.svelte",
+		"./tests/**/*.js",
+		"./tests/**/*.ts",
+		"./vite.config.js",
+		"./vite.config.ts"
+	],
+	"exclude": [
+		"./node_modules/**",
+		"./build/**",
+		"./.svelte-kit/**",
+		"./package/**",
+		"./dist/**"
+	]
 }
